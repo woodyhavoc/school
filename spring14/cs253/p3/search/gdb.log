@@ -1,0 +1,1232 @@
+Script started on Wed Mar 26 19:51:36 2014
+awoods > gdb search
+GNU gdb 6.3.50-20050815 (Apple version gdb-1822) (Sun Aug  5 03:00:42 UTC 2012)
+Copyright 2004 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "x86_64-apple-darwin"...Reading symbols for shared libraries .. done
+
+(gdb) break search.c:75
+Breakpoint 1 at 0x100000c96: file search.c, line 75.
+(gdb) run
+Starting program: /Users/awoods/Documents/School Work/Spring 2014/CS253/Programs/p3/search/search 
+Reading symbols for shared libraries +..............bfd_mach_o_scan_read_symtab_symbol: symbol "_bzero" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memccpy" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memchr" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memcmp" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memcpy" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memmove" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memset" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strchr" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strcmp" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strncmp" is unsupported 'indirect' reference: setting to undefined
+....warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/_libc_funcptr.o" - no debug information available for "_libc_funcptr.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strlen.o" - no debug information available for "strlen.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strcmp.o" - no debug information available for "strcmp.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/memcpy.o" - no debug information available for "memcpy.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strlcpy.o" - no debug information available for "strlcpy.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/kernel_vers.o" - no debug information available for "kernel_vers.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_privUser.o)" - no debug information available for "clock_privUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_replyUser.o)" - no debug information available for "clock_replyUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clockUser.o)" - no debug information available for "clockUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(excUser.o)" - no debug information available for "excUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(excServer.o)" - no debug information available for "excServer.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(host_privUser.o)" - no debug information available for "host_privUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(host_securityUser.o)" - no debug information available for "host_securityUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(lock_setUser.o)" - no debug information available for "lock_setUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_hostUser.o)" - no debug information available for "mach_hostUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_portUser.o)" - no debug information available for "mach_portUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_vmUser.o)" - no debug information available for "mach_vmUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(notifyUser.o)" - no debug information available for "notifyUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(processor_setUser.o)" - no debug information available for "processor_setUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(processorUser.o)" - no debug information available for "processorUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(netnameUser.o)" - no debug information available for "netnameUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(taskUser.o)" - no debug information available for "taskUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(thread_actUser.o)" - no debug information available for "thread_actUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(vm_mapUser.o)" - no debug information available for "vm_mapUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_sleep.o)" - no debug information available for "clock_sleep.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(error_codes.o)" - no debug information available for "error_codes.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher_state_identity.o)" - no debug information available for "exc_catcher_state_identity.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher_state.o)" - no debug information available for "exc_catcher_state.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher.o)" - no debug information available for "exc_catcher.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fprintf_stderr.o)" - no debug information available for "fprintf_stderr.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_error_string.o)" - no debug information available for "mach_error_string.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_error.o)" - no debug information available for "mach_error.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_init.o)" - no debug information available for "mach_init.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_absolute_time.o)" - no debug information available for "mach_absolute_time.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_msg.o)" - no debug information available for "mach_msg.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_traps.o)" - no debug information available for "mach_traps.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_allocate.o)" - no debug information available for "mig_allocate.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(__commpage_gettimeofday-1B10426C6417394E.o)" - no debug information available for "__commpage_gettimeofday.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_deallocate.o)" - no debug information available for "mig_deallocate.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_reply_setup.o)" - no debug information available for "mig_reply_setup.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_reply_port.o)" - no debug information available for "mig_reply_port.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_strncpy.o)" - no debug information available for "mig_strncpy.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(ms_thread_switch.o)" - no debug information available for "ms_thread_switch.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(panic.o)" - no debug information available for "panic.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(port_obj.o)" - no debug information available for "port_obj.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(semaphore.o)" - no debug information available for "semaphore.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(slot_name.o)" - no debug information available for "slot_name.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(string.o)" - no debug information available for "string.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getiopolicy_np.o)" - no debug information available for "getiopolicy_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_legacy.o)" - no debug information available for "mach_legacy.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(errno.o)" - no debug information available for "errno.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(libproc.o)" - no debug information available for "libproc.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(_libkernel_init.o)" - no debug information available for "_libkernel_init.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(gethostuuid.o)" - no debug information available for "gethostuuid.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(chmod.o)" - no debug information available for "chmod.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fchmod.o)" - no debug information available for "fchmod.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(posix_spawn.o)" - no debug information available for "posix_spawn.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fcntl.o)" - no debug information available for "fcntl.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fcntl-cancel.o)" - no debug information available for "fcntl-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getrlimit.o)" - no debug information available for "getrlimit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(ioctl.o)" - no debug information available for "ioctl.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(kill-37E6E965E657E453.o)" - no debug information available for "kill.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mmap.o)" - no debug information available for "mmap.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-pre1050.o)" - no debug information available for "select-pre1050.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-cancel.o)" - no debug information available for "select-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-F9C506C36CA23E61.o)" - no debug information available for "select.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(setrlimit.o)" - no debug information available for "setrlimit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(sigsuspend-A64FA829AFDB1B93.o)" - no debug information available for "sigsuspend.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(sigsuspend-cancel.o)" - no debug information available for "sigsuspend-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(unlink.o)" - no debug information available for "unlink.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(rmdir.o)" - no debug information available for "rmdir.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(rename.o)" - no debug information available for "rename.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(remove-counter.o)" - no debug information available for "remove-counter.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(__get_cpu_capabilities.o)" - no debug information available for "__get_cpu_capabilities.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(init_cpu_capabilities.o)" - no debug information available for "init_cpu_capabilities.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(open_dprotected_np.o)" - no debug information available for "open_dprotected_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(proc_listpidspath.o)" - no debug information available for "proc_listpidspath.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_port-FF9CE92C13C15B47.o)" - no debug information available for "mach_port.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_vm-781E485645396B48.o)" - no debug information available for "mach_vm.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getaudit.o)" - no debug information available for "getaudit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(alloc_once.o)" - no debug information available for "alloc_once.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(guarded_open_np.o)" - no debug information available for "guarded_open_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(carbon_delete.o)" - no debug information available for "carbon_delete.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(munmap-260E38402BE7DD5A.o)" - no debug information available for "munmap.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(kernel_vers.o)" - no debug information available for "kernel_vers.c".
+
+.....warning: Could not find object file "/private/var/tmp/libplatform/libplatform-24.90.1~2/libplatform.build/libsystem_platform.build/Objects-normal/x86_64/init.o" - no debug information available for "init.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(getenv.o)" - no debug information available for "getenv.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(asl.o)" - no debug information available for "asl.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(string_io.o)" - no debug information available for "string_io.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(platfunc.o)" - no debug information available for "platfunc.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(init.o)" - no debug information available for "init.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(atomic.o)" - no debug information available for "atomic.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(OSAtomic.o)" - no debug information available for "OSAtomic.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(pfz.o)" - no debug information available for "pfz.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libcachecontrol_normal.a(cache.o)" - no debug information available for "cache.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libcachecontrol_normal.a(cache.o)" - no debug information available for "cache.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(lock.o)" - no debug information available for "lock.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(once.o)" - no debug information available for "once.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(alloc_once.o)" - no debug information available for "alloc_once.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(semaphore.o)" - no debug information available for "semaphore.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(resolver.o)" - no debug information available for "resolver.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(setjmperr.o)" - no debug information available for "setjmperr.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(sigtramp.o)" - no debug information available for "sigtramp.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(setjmp.o)" - no debug information available for "setjmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(_sigtramp.o)" - no debug information available for "_sigtramp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(_setjmp.o)" - no debug information available for "_setjmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memccpy.o)" - no debug information available for "memccpy.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_resolvers.o)" - no debug information available for "memmove_resolvers.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_resolvers.o)" - no debug information available for "bzero_resolvers.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Ivybridge.o)" - no debug information available for "bzero_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strchr.o)" - no debug information available for "strchr.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Haswell.o)" - no debug information available for "memmove_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strlen.o)" - no debug information available for "strlen.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(ffs.o)" - no debug information available for "ffs.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strncmp.o)" - no debug information available for "strncmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Nehalem_and_Ivybridge.o)" - no debug information available for "memmove_Nehalem_and_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Merom.o)" - no debug information available for "memmove_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(longcopy_sse3x.o)" - no debug information available for "longcopy_sse3x.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memchr.o)" - no debug information available for "memchr.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strcmp.o)" - no debug information available for "strcmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Haswell.o)" - no debug information available for "bzero_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Merom.o)" - no debug information available for "bzero_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Haswell.o)" - no debug information available for "memset_pattern_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memcmp.o)" - no debug information available for "memcmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Merom.o)" - no debug information available for "memset_pattern_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Ivybridge.o)" - no debug information available for "memset_pattern_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(swapcontext.o)" - no debug information available for "swapcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(makecontext.o)" - no debug information available for "makecontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(getmcontext.o)" - no debug information available for "getmcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(setcontext.o)" - no debug information available for "setcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(getcontext.o)" - no debug information available for "getcontext.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(_ctx_start.o)" - no debug information available for "_ctx_start.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(_setcontext.o)" - no debug information available for "_setcontext.s".
+
+............ done
+Enter number to search for or -1 to quit:5
+
+Breakpoint 1, binary_search (low=0, high=404, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) conit  tinue
+Continuing.
+Current language:  auto; currently minimal
+
+Breakpoint 1, binary_search (low=0, high=202, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=101, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=50, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=25, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=12, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=6, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=3, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=1, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$1 = 0
+(gdb) print low
+$2 = 0
+(gdb) l print high
+$3 = 1
+(gdb) step
+81	    	if (low == high) {
+(gdb) print     step
+85	    	if (data[middle] < key)
+(gdb) step
+86				low = middle;
+(gdb) step
+89		}
+(gdb) step
+
+Breakpoint 1, binary_search (low=0, high=1, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) print data  [middle]
+$4 = 4
+(gdb) step
+81	    	if (low == high) {
+(gdb) step
+85	    	if (data[middle] < key)
+(gdb) step    print key
+$5 = 5
+(gdb) step
+86				low = middle;
+(gdb) step
+89		}
+(gdb) print low
+$6 = 0
+(gdb) conit  tinue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=1, data=0x100001070, key=5) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) quit
+The program is running.  Exit anyway? (y or n) y
+awoods > exit
+exit
+
+Script done on Wed Mar 26 19:53:08 2014
+Script started on Wed Mar 26 20:10:54 2014
+awoods > gdb sare[K[K[Kearch
+GNU gdb 6.3.50-20050815 (Apple version gdb-1822) (Sun Aug  5 03:00:42 UTC 2012)
+Copyright 2004 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "x86_64-apple-darwin"...Reading symbols for shared libraries .. done
+
+(gdb) break search.c:75
+Breakpoint 1 at 0x100000c56: file search.c, line 75.
+(gdb) run
+Starting program: /Users/awoods/Documents/School Work/Spring 2014/CS253/Programs/p3/search/search 
+Reading symbols for shared libraries +..............bfd_mach_o_scan_read_symtab_symbol: symbol "_bzero" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memccpy" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memchr" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memcmp" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memcpy" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memmove" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memset" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strchr" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strcmp" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strncmp" is unsupported 'indirect' reference: setting to undefined
+....warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/_libc_funcptr.o" - no debug information available for "_libc_funcptr.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strlen.o" - no debug information available for "strlen.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strcmp.o" - no debug information available for "strcmp.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/memcpy.o" - no debug information available for "memcpy.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strlcpy.o" - no debug information available for "strlcpy.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/kernel_vers.o" - no debug information available for "kernel_vers.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_privUser.o)" - no debug information available for "clock_privUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_replyUser.o)" - no debug information available for "clock_replyUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clockUser.o)" - no debug information available for "clockUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(excUser.o)" - no debug information available for "excUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(excServer.o)" - no debug information available for "excServer.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(host_privUser.o)" - no debug information available for "host_privUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(host_securityUser.o)" - no debug information available for "host_securityUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(lock_setUser.o)" - no debug information available for "lock_setUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_hostUser.o)" - no debug information available for "mach_hostUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_portUser.o)" - no debug information available for "mach_portUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_vmUser.o)" - no debug information available for "mach_vmUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(notifyUser.o)" - no debug information available for "notifyUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(processor_setUser.o)" - no debug information available for "processor_setUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(processorUser.o)" - no debug information available for "processorUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(netnameUser.o)" - no debug information available for "netnameUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(taskUser.o)" - no debug information available for "taskUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(thread_actUser.o)" - no debug information available for "thread_actUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(vm_mapUser.o)" - no debug information available for "vm_mapUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_sleep.o)" - no debug information available for "clock_sleep.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(error_codes.o)" - no debug information available for "error_codes.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher_state_identity.o)" - no debug information available for "exc_catcher_state_identity.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher_state.o)" - no debug information available for "exc_catcher_state.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher.o)" - no debug information available for "exc_catcher.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fprintf_stderr.o)" - no debug information available for "fprintf_stderr.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_error_string.o)" - no debug information available for "mach_error_string.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_error.o)" - no debug information available for "mach_error.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_init.o)" - no debug information available for "mach_init.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_absolute_time.o)" - no debug information available for "mach_absolute_time.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_msg.o)" - no debug information available for "mach_msg.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_traps.o)" - no debug information available for "mach_traps.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_allocate.o)" - no debug information available for "mig_allocate.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(__commpage_gettimeofday-1B10426C6417394E.o)" - no debug information available for "__commpage_gettimeofday.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_deallocate.o)" - no debug information available for "mig_deallocate.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_reply_setup.o)" - no debug information available for "mig_reply_setup.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_reply_port.o)" - no debug information available for "mig_reply_port.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_strncpy.o)" - no debug information available for "mig_strncpy.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(ms_thread_switch.o)" - no debug information available for "ms_thread_switch.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(panic.o)" - no debug information available for "panic.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(port_obj.o)" - no debug information available for "port_obj.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(semaphore.o)" - no debug information available for "semaphore.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(slot_name.o)" - no debug information available for "slot_name.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(string.o)" - no debug information available for "string.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getiopolicy_np.o)" - no debug information available for "getiopolicy_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_legacy.o)" - no debug information available for "mach_legacy.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(errno.o)" - no debug information available for "errno.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(libproc.o)" - no debug information available for "libproc.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(_libkernel_init.o)" - no debug information available for "_libkernel_init.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(gethostuuid.o)" - no debug information available for "gethostuuid.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(chmod.o)" - no debug information available for "chmod.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fchmod.o)" - no debug information available for "fchmod.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(posix_spawn.o)" - no debug information available for "posix_spawn.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fcntl.o)" - no debug information available for "fcntl.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fcntl-cancel.o)" - no debug information available for "fcntl-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getrlimit.o)" - no debug information available for "getrlimit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(ioctl.o)" - no debug information available for "ioctl.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(kill-37E6E965E657E453.o)" - no debug information available for "kill.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mmap.o)" - no debug information available for "mmap.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-pre1050.o)" - no debug information available for "select-pre1050.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-cancel.o)" - no debug information available for "select-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-F9C506C36CA23E61.o)" - no debug information available for "select.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(setrlimit.o)" - no debug information available for "setrlimit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(sigsuspend-A64FA829AFDB1B93.o)" - no debug information available for "sigsuspend.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(sigsuspend-cancel.o)" - no debug information available for "sigsuspend-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(unlink.o)" - no debug information available for "unlink.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(rmdir.o)" - no debug information available for "rmdir.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(rename.o)" - no debug information available for "rename.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(remove-counter.o)" - no debug information available for "remove-counter.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(__get_cpu_capabilities.o)" - no debug information available for "__get_cpu_capabilities.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(init_cpu_capabilities.o)" - no debug information available for "init_cpu_capabilities.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(open_dprotected_np.o)" - no debug information available for "open_dprotected_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(proc_listpidspath.o)" - no debug information available for "proc_listpidspath.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_port-FF9CE92C13C15B47.o)" - no debug information available for "mach_port.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_vm-781E485645396B48.o)" - no debug information available for "mach_vm.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getaudit.o)" - no debug information available for "getaudit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(alloc_once.o)" - no debug information available for "alloc_once.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(guarded_open_np.o)" - no debug information available for "guarded_open_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(carbon_delete.o)" - no debug information available for "carbon_delete.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(munmap-260E38402BE7DD5A.o)" - no debug information available for "munmap.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(kernel_vers.o)" - no debug information available for "kernel_vers.c".
+
+.....warning: Could not find object file "/private/var/tmp/libplatform/libplatform-24.90.1~2/libplatform.build/libsystem_platform.build/Objects-normal/x86_64/init.o" - no debug information available for "init.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(getenv.o)" - no debug information available for "getenv.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(asl.o)" - no debug information available for "asl.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(string_io.o)" - no debug information available for "string_io.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(platfunc.o)" - no debug information available for "platfunc.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(init.o)" - no debug information available for "init.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(atomic.o)" - no debug information available for "atomic.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(OSAtomic.o)" - no debug information available for "OSAtomic.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(pfz.o)" - no debug information available for "pfz.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libcachecontrol_normal.a(cache.o)" - no debug information available for "cache.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libcachecontrol_normal.a(cache.o)" - no debug information available for "cache.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(lock.o)" - no debug information available for "lock.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(once.o)" - no debug information available for "once.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(alloc_once.o)" - no debug information available for "alloc_once.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(semaphore.o)" - no debug information available for "semaphore.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(resolver.o)" - no debug information available for "resolver.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(setjmperr.o)" - no debug information available for "setjmperr.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(sigtramp.o)" - no debug information available for "sigtramp.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(setjmp.o)" - no debug information available for "setjmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(_sigtramp.o)" - no debug information available for "_sigtramp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(_setjmp.o)" - no debug information available for "_setjmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memccpy.o)" - no debug information available for "memccpy.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_resolvers.o)" - no debug information available for "memmove_resolvers.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_resolvers.o)" - no debug information available for "bzero_resolvers.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Ivybridge.o)" - no debug information available for "bzero_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strchr.o)" - no debug information available for "strchr.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Haswell.o)" - no debug information available for "memmove_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strlen.o)" - no debug information available for "strlen.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(ffs.o)" - no debug information available for "ffs.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strncmp.o)" - no debug information available for "strncmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Nehalem_and_Ivybridge.o)" - no debug information available for "memmove_Nehalem_and_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Merom.o)" - no debug information available for "memmove_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(longcopy_sse3x.o)" - no debug information available for "longcopy_sse3x.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memchr.o)" - no debug information available for "memchr.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strcmp.o)" - no debug information available for "strcmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Haswell.o)" - no debug information available for "bzero_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Merom.o)" - no debug information available for "bzero_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Haswell.o)" - no debug information available for "memset_pattern_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memcmp.o)" - no debug information available for "memcmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Merom.o)" - no debug information available for "memset_pattern_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Ivybridge.o)" - no debug information available for "memset_pattern_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(swapcontext.o)" - no debug information available for "swapcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(makecontext.o)" - no debug information available for "makecontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(getmcontext.o)" - no debug information available for "getmcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(setcontext.o)" - no debug information available for "setcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(getcontext.o)" - no debug information available for "getcontext.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(_ctx_start.o)" - no debug information available for "_ctx_start.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(_setcontext.o)" - no debug information available for "_setcontext.s".
+
+............ done
+Enter number to search for or -1 to quit:4
+
+Breakpoint 1, binary_search (low=0, high=404, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+Current language:  auto; currently minimal
+
+Breakpoint 1, binary_search (low=0, high=202, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=101, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=50, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=25, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=12, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=6, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=3, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=1, data=0x100001070, key=4) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) pr  step
+77	    	if (data[middle] == key) {
+(gdb) m print middle
+$1 = 0
+(gdb) print data[middle]
+$2 = 4
+(gdb) print key
+$3 = 4
+(gdb) step
+78				return middle;
+(gdb) step
+96	}
+(gdb) step
+main (argc=1, argv=0x7fff5fbffb08) at search.c:118
+118			if (index == -1) 
+(gdb) step
+120			else if (index > 0)
+(gdb) step
+123	   }
+(gdb) quit
+The program is running.  Exit anyway? (y or n) y
+awoods > exit
+exit
+
+Script done on Wed Mar 26 20:11:50 2014
+Script started on Wed Mar 26 20:12:44 2014
+awoods > gdb search
+GNU gdb 6.3.50-20050815 (Apple version gdb-1822) (Sun Aug  5 03:00:42 UTC 2012)
+Copyright 2004 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "x86_64-apple-darwin"...Reading symbols for shared libraries .. done
+
+(gdb) break search.c:75
+Breakpoint 1 at 0x100000c56: file search.c, line 75.
+(gdb) run
+Starting program: /Users/awoods/Documents/School Work/Spring 2014/CS253/Programs/p3/search/search 
+Reading symbols for shared libraries +..............bfd_mach_o_scan_read_symtab_symbol: symbol "_bzero" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memccpy" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memchr" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memcmp" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memcpy" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memmove" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_memset" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strchr" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strcmp" is unsupported 'indirect' reference: setting to undefined
+bfd_mach_o_scan_read_symtab_symbol: symbol "_strncmp" is unsupported 'indirect' reference: setting to undefined
+....warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/_libc_funcptr.o" - no debug information available for "_libc_funcptr.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strlen.o" - no debug information available for "strlen.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strcmp.o" - no debug information available for "strcmp.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/memcpy.o" - no debug information available for "memcpy.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/strlcpy.o" - no debug information available for "strlcpy.c".
+
+warning: Could not find object file "/private/var/tmp/Libsyscall/Libsyscall-2422.90.20~2/Libsyscall.build/Libsyscall_dynamic.build/Objects-normal/x86_64/kernel_vers.o" - no debug information available for "kernel_vers.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_privUser.o)" - no debug information available for "clock_privUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_replyUser.o)" - no debug information available for "clock_replyUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clockUser.o)" - no debug information available for "clockUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(excUser.o)" - no debug information available for "excUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(excServer.o)" - no debug information available for "excServer.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(host_privUser.o)" - no debug information available for "host_privUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(host_securityUser.o)" - no debug information available for "host_securityUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(lock_setUser.o)" - no debug information available for "lock_setUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_hostUser.o)" - no debug information available for "mach_hostUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_portUser.o)" - no debug information available for "mach_portUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_vmUser.o)" - no debug information available for "mach_vmUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(notifyUser.o)" - no debug information available for "notifyUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(processor_setUser.o)" - no debug information available for "processor_setUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(processorUser.o)" - no debug information available for "processorUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(netnameUser.o)" - no debug information available for "netnameUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(taskUser.o)" - no debug information available for "taskUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(thread_actUser.o)" - no debug information available for "thread_actUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(vm_mapUser.o)" - no debug information available for "vm_mapUser.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(clock_sleep.o)" - no debug information available for "clock_sleep.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(error_codes.o)" - no debug information available for "error_codes.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher_state_identity.o)" - no debug information available for "exc_catcher_state_identity.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher_state.o)" - no debug information available for "exc_catcher_state.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(exc_catcher.o)" - no debug information available for "exc_catcher.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fprintf_stderr.o)" - no debug information available for "fprintf_stderr.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_error_string.o)" - no debug information available for "mach_error_string.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_error.o)" - no debug information available for "mach_error.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_init.o)" - no debug information available for "mach_init.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_absolute_time.o)" - no debug information available for "mach_absolute_time.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_msg.o)" - no debug information available for "mach_msg.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_traps.o)" - no debug information available for "mach_traps.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_allocate.o)" - no debug information available for "mig_allocate.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(__commpage_gettimeofday-1B10426C6417394E.o)" - no debug information available for "__commpage_gettimeofday.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_deallocate.o)" - no debug information available for "mig_deallocate.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_reply_setup.o)" - no debug information available for "mig_reply_setup.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_reply_port.o)" - no debug information available for "mig_reply_port.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mig_strncpy.o)" - no debug information available for "mig_strncpy.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(ms_thread_switch.o)" - no debug information available for "ms_thread_switch.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(panic.o)" - no debug information available for "panic.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(port_obj.o)" - no debug information available for "port_obj.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(semaphore.o)" - no debug information available for "semaphore.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(slot_name.o)" - no debug information available for "slot_name.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(string.o)" - no debug information available for "string.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getiopolicy_np.o)" - no debug information available for "getiopolicy_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_legacy.o)" - no debug information available for "mach_legacy.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(errno.o)" - no debug information available for "errno.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(libproc.o)" - no debug information available for "libproc.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(_libkernel_init.o)" - no debug information available for "_libkernel_init.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(gethostuuid.o)" - no debug information available for "gethostuuid.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(chmod.o)" - no debug information available for "chmod.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fchmod.o)" - no debug information available for "fchmod.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(posix_spawn.o)" - no debug information available for "posix_spawn.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fcntl.o)" - no debug information available for "fcntl.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(fcntl-cancel.o)" - no debug information available for "fcntl-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getrlimit.o)" - no debug information available for "getrlimit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(ioctl.o)" - no debug information available for "ioctl.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(kill-37E6E965E657E453.o)" - no debug information available for "kill.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mmap.o)" - no debug information available for "mmap.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-pre1050.o)" - no debug information available for "select-pre1050.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-cancel.o)" - no debug information available for "select-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(select-F9C506C36CA23E61.o)" - no debug information available for "select.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(setrlimit.o)" - no debug information available for "setrlimit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(sigsuspend-A64FA829AFDB1B93.o)" - no debug information available for "sigsuspend.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(sigsuspend-cancel.o)" - no debug information available for "sigsuspend-cancel.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(unlink.o)" - no debug information available for "unlink.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(rmdir.o)" - no debug information available for "rmdir.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(rename.o)" - no debug information available for "rename.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(remove-counter.o)" - no debug information available for "remove-counter.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(__get_cpu_capabilities.o)" - no debug information available for "__get_cpu_capabilities.s".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(init_cpu_capabilities.o)" - no debug information available for "init_cpu_capabilities.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(open_dprotected_np.o)" - no debug information available for "open_dprotected_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(proc_listpidspath.o)" - no debug information available for "proc_listpidspath.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_port-FF9CE92C13C15B47.o)" - no debug information available for "mach_port.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(mach_vm-781E485645396B48.o)" - no debug information available for "mach_vm.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(getaudit.o)" - no debug information available for "getaudit.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(alloc_once.o)" - no debug information available for "alloc_once.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(guarded_open_np.o)" - no debug information available for "guarded_open_np.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(carbon_delete.o)" - no debug information available for "carbon_delete.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(munmap-260E38402BE7DD5A.o)" - no debug information available for "munmap.c".
+
+warning: Could not find object file "/BinaryCache/Libsyscall/Libsyscall-2422.90.20~2/Symbols/BuiltProducts/libsystem_kernel.a(kernel_vers.o)" - no debug information available for "kernel_vers.c".
+
+.....warning: Could not find object file "/private/var/tmp/libplatform/libplatform-24.90.1~2/libplatform.build/libsystem_platform.build/Objects-normal/x86_64/init.o" - no debug information available for "init.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(getenv.o)" - no debug information available for "getenv.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(asl.o)" - no debug information available for "asl.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsimple_normal.a(string_io.o)" - no debug information available for "string_io.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(platfunc.o)" - no debug information available for "platfunc.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(init.o)" - no debug information available for "init.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(atomic.o)" - no debug information available for "atomic.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(OSAtomic.o)" - no debug information available for "OSAtomic.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libatomics_normal.a(pfz.o)" - no debug information available for "pfz.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libcachecontrol_normal.a(cache.o)" - no debug information available for "cache.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libcachecontrol_normal.a(cache.o)" - no debug information available for "cache.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(lock.o)" - no debug information available for "lock.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(once.o)" - no debug information available for "once.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(alloc_once.o)" - no debug information available for "alloc_once.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(semaphore.o)" - no debug information available for "semaphore.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libos_normal.a(resolver.o)" - no debug information available for "resolver.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(setjmperr.o)" - no debug information available for "setjmperr.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(sigtramp.o)" - no debug information available for "sigtramp.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(setjmp.o)" - no debug information available for "setjmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(_sigtramp.o)" - no debug information available for "_sigtramp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libsetjmp_normal.a(_setjmp.o)" - no debug information available for "_setjmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memccpy.o)" - no debug information available for "memccpy.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_resolvers.o)" - no debug information available for "memmove_resolvers.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_resolvers.o)" - no debug information available for "bzero_resolvers.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Ivybridge.o)" - no debug information available for "bzero_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strchr.o)" - no debug information available for "strchr.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Haswell.o)" - no debug information available for "memmove_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strlen.o)" - no debug information available for "strlen.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(ffs.o)" - no debug information available for "ffs.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strncmp.o)" - no debug information available for "strncmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Nehalem_and_Ivybridge.o)" - no debug information available for "memmove_Nehalem_and_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memmove_Merom.o)" - no debug information available for "memmove_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(longcopy_sse3x.o)" - no debug information available for "longcopy_sse3x.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memchr.o)" - no debug information available for "memchr.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(strcmp.o)" - no debug information available for "strcmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Haswell.o)" - no debug information available for "bzero_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(bzero_Merom.o)" - no debug information available for "bzero_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Haswell.o)" - no debug information available for "memset_pattern_Haswell.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memcmp.o)" - no debug information available for "memcmp.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Merom.o)" - no debug information available for "memset_pattern_Merom.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libstring_normal.a(memset_pattern_Ivybridge.o)" - no debug information available for "memset_pattern_Ivybridge.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(swapcontext.o)" - no debug information available for "swapcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(makecontext.o)" - no debug information available for "makecontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(getmcontext.o)" - no debug information available for "getmcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(setcontext.o)" - no debug information available for "setcontext.c".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(getcontext.o)" - no debug information available for "getcontext.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(_ctx_start.o)" - no debug information available for "_ctx_start.s".
+
+warning: Could not find object file "/BinaryCache/libplatform/libplatform-24.90.1~2/Symbols/libucontext_normal.a(_setcontext.o)" - no debug information available for "_setcontext.s".
+
+............ done
+Enter number to search for or -1 to quit:15
+
+Breakpoint 1, binary_search (low=0, high=404, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) step
+Current language:  auto; currently minimal
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$1 = 202
+(gdb) print high
+$2 = 404
+(gdb) print low
+$3 = 0
+(gdb) print key
+$4 = 15
+(gdb) print data[middle]
+$5 = 498
+(gdb) step[     next
+81	    	if (low == high) {
+(gdb) next
+85	    	if (data[middle] < key)
+(gdb) step
+88				high = middle;
+(gdb) step
+90			if(low == 0 && middle == 0 && high == 1)
+(gdb) print     step
+94		}
+(gdb) step
+
+Breakpoint 1, binary_search (low=0, high=202, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) poi  rint hig         print data[mi             step
+77	    	if (data[middle] == key) {
+(gdb) print data[middle]
+$6 = 246
+(gdb) conitn   tinue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=101, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$7 = 50
+(gdb) print data[middle]
+$8 = 120
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=50, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) print midd          step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$9 = 25
+(gdb) print data[middle]
+$10 = 68
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=25, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) pr  step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$11 = 12
+(gdb) print data[middl;e  e]
+$12 = 34
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=12, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$13 = 6
+(gdb) print data[middle]
+$14 = 22
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=0, high=6, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$15 = 3
+(gdb) t print[data      data[middle]
+$16 = 16
+(gdb) ste[ p
+81	    	if (low == high) {
+(gdb) ste   print low
+$17 = 0
+(gdb) print high
+$18 = 6
+(gdb) step
+85	    	if (data[middle] < key)
+(gdb) step
+88				high = middle;
+(gdb) step
+90			if(low == 0 && middle == 0 && high == 1)
+(gdb) step
+94		}
+(gdb) step
+
+Breakpoint 1, binary_search (low=0, high=3, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) ls  print high
+$19 = 3
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$20 = 1
+(gdb) print data[middle]
+$21 = 6
+(gdb) step
+81	    	if (low == high) {
+(gdb) step
+85	    	if (data[middle] < key)
+(gdb) step
+86				low = middle;
+(gdb) step
+90			if(low == 0 && middle == 0 && high == 1)
+(gdb) step
+94		}
+(gdb) step
+
+Breakpoint 1, binary_search (low=1, high=3, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) print high
+$22 = 3
+(gdb) print low
+$23 = 1
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$24 = 2
+(gdb) print data[middle]
+$25 = 14
+(gdb) step
+81	    	if (low == high) {
+(gdb) step
+85	    	if (data[middle] < key)
+(gdb) step
+86				low = middle;
+(gdb) step
+90			if(low == 0 && middle == 0 && high == 1)
+(gdb) step
+94		}
+(gdb) step
+
+Breakpoint 1, binary_search (low=2, high=3, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) print middle
+$26 = 2
+(gdb) print low
+$27 = 2
+(gdb) print high
+$28 = 3
+(gdb) step
+81	    	if (low == high) {
+(gdb) step
+85	    	if (data[middle] < key)
+(gdb) print data[middle]
+$29 = 14
+(gdb) step
+86				low = middle;
+(gdb) continue
+Continuing.
+
+Breakpoint 1, binary_search (low=2, high=3, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) step
+77	    	if (data[middle] == key) {
+(gdb) step
+81	    	if (low == high) {
+(gdb) step
+85	    	if (data[middle] < key)
+(gdb) step
+86				low = middle;
+(gdb) step
+90			if(low == 0 && middle == 0 && high == 1)
+(gdb) step
+94		}
+(gdb) step
+
+Breakpoint 1, binary_search (low=2, high=3, data=0x100001070, key=15) at search.c:75
+75	    	middle = (low + high) / 2;
+(gdb) quit
+The program is running.  Exit anyway? (y or n) y
+awoods > exit
+exit
+
+Script done on Wed Mar 26 20:17:40 2014

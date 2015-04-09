@@ -1,0 +1,45 @@
+scan error: 41 (line: 6, char 10)
+scan error: 59 (line: 6, char 12)
+scan error: 125 (line: 6, char 13)
+Entered Function:   generate	Token Code: TOK_BLOCK
+Entered Function:       prog	Token Code: TOK_BLOCK
+Entered Function:      block	Token Code: TOK_DECLS
+Entered Function:      stmts	Token Code: TOK_STMT
+Entered Function:       stmt	Token Code: TOK_DO
+Entered Function:    stmt_do	Token Code: TOK_DO
+Entered Function:       stmt	Token Code: TOK_BLOCK
+Entered Function: stmt_block	Token Code: TOK_BLOCK
+Entered Function:      block	Token Code: TOK_DECLS
+Entered Function:      stmts	Token Code: TOK_STMT
+Entered Function:       stmt	Token Code: TOK_WRITE
+Entered Function: stmt_write	Token Code: TOK_WRITE
+Entered Function:       bool	Token Code: TOK_JOIN
+Entered Function:       join	Token Code: TOK_EQUALITY
+Entered Function:   equality	Token Code: TOK_REL
+Entered Function:        rel	Token Code: TOK_EXPR
+Entered Function:       expr	Token Code: TOK_TERM
+Entered Function:       term	Token Code: TOK_UNARY
+Entered Function:      unary	Token Code: TOK_FACTOR
+Entered Function:     factor	Token Code: TOK_NUM
+Entered Function:       bool	Token Code: TOK_JOIN
+Entered Function:       join	Token Code: TOK_EQUALITY
+Entered Function:   equality	Token Code: TOK_REL
+Entered Function:        rel	Token Code: TOK_EXPR
+Entered Function:       expr	Token Code: TOK_TERM
+Entered Function:       term	Token Code: TOK_UNARY
+Entered Function:      unary	Token Code: TOK_FACTOR
+Entered Function:     factor	Token Code: TOK_NUM
+Entered Function:       stmt	Token Code: TOK_BLOCK
+Entered Function: stmt_block	Token Code: TOK_BLOCK
+Entered Function:      block	Token Code: TOK_DECLS
+Entered Function:      stmts	Token Code: TOK_STMT
+Entered Function:       stmt	Token Code: TOK_WRITE
+Entered Function: stmt_write	Token Code: TOK_WRITE
+Entered Function:       bool	Token Code: TOK_JOIN
+Entered Function:       join	Token Code: TOK_EQUALITY
+Entered Function:   equality	Token Code: TOK_REL
+Entered Function:        rel	Token Code: TOK_EXPR
+Entered Function:       expr	Token Code: TOK_TERM
+Entered Function:       term	Token Code: TOK_UNARY
+Entered Function:      unary	Token Code: TOK_FACTOR
+Entered Function:     factor	Token Code: TOK_NUM

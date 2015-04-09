@@ -1,0 +1,89 @@
+****************
+* p0: Doubly Linked List Library
+* CS453
+* 7 Sep 14
+* Aaron Woods
+**************** 
+
+OVERVIEW:
+
+ This program creates a doubly linked list library, using the doubly linked list
+ implemented last semester in CS253.
+
+
+INCLUDED FILES:
+
+ Top:
+ 
+      doxygen-config: used to generate the doxygen comments page
+  
+      Makefile: used to install the library, and generate the executables
+  
+      README: this file
+  
+ ./include:
+ 
+ ./lib:
+ 
+ ./libsrc:
+ 
+      common.h: defines Boolean, TRUE, and FALSE, used in List.h and Node.h
+      
+      List.h: Defines the functions, required function pointers, variables, and structure of the List
+      
+      List.c: Implements the List defined in List.h
+      
+      Makefile: Creates a library with List.h, Node.h, and common.h, then installs it in ./lib
+      
+      Node.h: Defines the functions, variables, and structure of the Node
+      
+      Node.c: Implements the Node defined in Node.h
+      
+ ./testsuite:
+ 
+      Makefile: compiles the source files and creates executables for each test
+      
+      Object.h: Defines the functions that will be passed to the List, variables, and structure of the Object
+      
+      Object.c: Implements the Object defined in Object.h
+      
+      RandomTestList.c: Performs random tests on a ListPtr to ensure everything is working properly
+      
+      SimpleTestList.c: Performs a simple test of a ListPtr by adding 1000 nodes, and then printing
+                        the list.
+      
+      UnitTestList.c: Performs tests on every ListPtr function to ensure they are working properly.
+  
+
+BUILDING AND RUNNING:
+
+ To build the program, from the top level directory, use the command: "make"
+ 
+ This will navigate to the subdirectories and execute their "make" commands
+ as well.
+ 
+ To run the program, enter one of the following commands:
+ 
+ testsuite/UnitTestList
+ 
+ testsuite/SimpleTestList
+ 
+ testsuite/RandomTestList <list size> [<test size=list size>] [<seed>] 
+
+PROGRAM DESIGN:
+
+ The main purpose of creating this library is to be able to use it in other applications
+ without having to write the list again.
+ 
+
+TESTING:
+
+ Aside from running the tests described above with valgrind, I also used a test script which executed
+ the RandomTestList 100 times, each time with different list sizes, test sizes, and seed
+ values.  The RandomTestList was run with valgrind as well.
+
+DISCUSSION:
+ 
+ The biggest problem I had was I did not understand at first that I needed to change the
+ $LD_LIBRARY_PATH variable to include the library that I had created.  Once I understood this
+ however, it was quite simple to get everything working properly.

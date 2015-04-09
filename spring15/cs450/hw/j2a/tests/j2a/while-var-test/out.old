@@ -1,0 +1,32 @@
+
+# program begin execution
+	push	$start
+	jmp
+$display:	0
+$start:
+	push	$display
+	0
+	add
+	push	$sp
+	ld
+	st
+
+# generating while loop code
+
+$label0:
+	push	$label1
+	jz
+	push	$label0
+	jmp
+
+$label1:
+	push	$display
+	0
+	add
+	push	$sp
+	ld
+	st
+
+# program termination
+	stop
+	end

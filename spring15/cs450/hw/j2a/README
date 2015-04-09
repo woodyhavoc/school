@@ -1,0 +1,100 @@
+****************
+* HW2: Compiler
+* CS450
+* 9 March 2015
+* Aaron Woods
+**************** 
+
+OVERVIEW:
+
+ This program compiles a java-like language into code that can
+ be run on asm.
+
+
+INCLUDED FILES:
+
+├── asm
+├── break.c
+├── break.h
+├── bubble.java
+├── doWhile.java
+├── error.c
+├── error.h
+├── generator.c
+├── generator.h
+├── generatorTrace.log
+├── grammar.txt
+├── linkage.h
+├── main.c
+├── Makefile
+├── out.asm
+├── parser.c
+├── parser.h
+├── parserTrace.log
+├── README
+├── regrTest
+├── removeTests.sh
+├── scanner.c
+├── scanner.h
+├── scope.java
+├── simple.asm
+├── simple.java
+├── source.java
+├── stackTrace.log
+├── strtab.cc
+├── strtab.h
+├── symtab.cc
+├── symtaben.c
+├── symtaben.h
+├── symtab.h
+├── tests
+├── tokenentry.h
+├── token.h
+├── tokens.gperf
+├── tree.c
+├── tree.h
+├── type.c
+├── type.h
+├── while.java
+└── yyinput.h
+
+
+BUILDING AND RUNNING:
+
+ To build the program, use the command:
+ 
+ 	make
+	
+ After the program has been compiled, it can be run by the following
+ command:
+ 
+ 	./j2a < "inputFile.java" > "outputFile.asm"
+	
+ The .asm file can then be run on the asm machine with the following 
+ command:
+ 
+ 	cat "outputFile.asm" - | ./asm	 
+
+PROGRAM DESIGN:
+
+ This program works by parsing the input file, looking for certain keywords
+ and symbols, and building a parse tree.  After the parse tree has been made,
+ it is passed to a code generator, which converts the parse tree into code that
+ can be run on the asm machine. 
+ 
+
+TESTING:
+
+ To test my program, I used my previously made regression tester, and a test directory
+ which contained many tests for specific things.  The regression tester runs through
+ each subdirectory, performs the test contained there, and reports if there are any
+ unexpected errors. 
+
+DISCUSSION:
+ 
+ My biggest obstacles in this assignment were conceptual.  It took me a while to
+ reach an understanding of the various concepts surrounding compilation and translation.
+ Once I began to understand the concepts, I also realized why recursion is such a
+ powerful tool.  Without it, we would have to try and account for every possible situation,
+ which is impossible.  Instead, we need only provide a set of rules for if certain
+ things occur. 

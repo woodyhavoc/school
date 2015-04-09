@@ -1,0 +1,75 @@
+#!/bin/awk -f
+
+# Author: Aaron Woods
+# Instructor: Dr. Buff
+# Course: CS354
+# Assignment: LA4
+# Date: 2 Nov 14
+
+# AWK program to read permit info from a .csv (comma separated
+# value) file, and tabulate it inside a webpage.
+
+# The begin block generates all of the code that is typically
+# found at the top of an html file.  After that, it begins
+# generating the table in which all the relevant data will
+# be placed.  It also initializes the FPAT variable which
+# is used to detect the patterns that should be included in
+# the fields.
+BEGIN {
+	FPAT = "([^,]+)|(\"[^\"]+\")"
+	IGNORECASE=1
+	print "<head>"
+	print "<title>Single Family Dwellings</title>"
+	print "</head>"
+	print "<body bgcolor=lightgrey>"
+	print "<div id=table>"
+	print "<table border=2 border-style=outset cellpadding=5>"
+	print 	"<thead>"
+	print		"<tr>"
+	print			"<th colspan=5><h1>Building Permits - Ada County</h1><br>"
+	print			"<h2>Single Family Dwellings</h2></th>"
+	print		"</tr>"
+	print	"</thead>"
+	print	"<tbody>" 
+}
+
+# This block of code only gets executed one time, for the first
+# line of the input file.  It is responsible for placing the correct
+# table headers in the table.
+NR==1{
+	print "<tr>" 
+	print 	"<th>"$1"</th>" 
+	print 	"<th>"$5"</th>"
+	print 	"<th>"$6"</th>" 
+	print 	"<th>"$7"</th>"
+	print 	"<th>"$8"</th>"
+	print"</tr>"
+}
+
+# This block handles the remainder of the lines in the file.
+# It searches them to find any of the regular expressions
+# between the slashes below.  If it finds a line that contains
+# that regular expression, it prints the line, as well as the
+# html code needed to place each field into a table.
+# The qsub() funtion is used to clear all the quotation marks
+# from the eighth field which is the value of the dwelling.
+/single|fam|dwell/ && !/add/{
+	gsub("\"", "", $8)
+	print "<tr>" 
+	print 	"<td>"$1"</td>" 
+	print 	"<td>"$5"</td>"
+	print 	"<td>"$6"</td>" 
+	print 	"<td>"$7"</td>"
+	print 	"<td>"$8"</td>"
+	print"</tr>"
+}
+
+# The END block closes all the open html tags that were used
+# previously.  This is the last piece of code to be executed
+# in this program.
+END {
+	print "</tbody>"
+	print "</table>"
+	print "</div>" 
+	print "</body>"
+}

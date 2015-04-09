@@ -1,0 +1,279 @@
+% Document class
+\documentclass{article}
+
+% Packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{listings}
+\usepackage{latexsym}
+\usepackage{mathtools}
+
+% Graphics Path
+\graphicspath{ `{images/} }
+
+% Page Styles
+\pagestyle{fancy}
+
+% Custom Commands
+\newcommand{\ul}{\underline}
+
+% Header Info
+\fancyhf{}
+\lhead{CS450}
+\chead{HW3}
+\rhead{Aaron Woods}
+\rfoot{Page \thepage}
+
+% Begin Document
+\begin{document}
+
+% Problem 3.1.1
+\noindent \textbf{3.1.1}\\
+\\
+\texttt{
+\ul{float}\
+\ul{limitedSquare}\
+\ul{(}\
+\ul{x}\
+\ul{)}\
+\ul{float}\
+\ul{x}\
+\ul{;}\\
+\ul{\{}\\
+\indent 
+/* returns x-squared, but never more than 100 */ \\
+\indent
+\ul{return}\
+\ul{(}\
+\ul{x}\
+\ul{<=}\
+\ul{-}\
+\ul{10.0}\
+\ul{$\vert$$\vert$}\
+\ul{x}\
+\ul{>=}\
+\ul{10.0}\
+\ul{)}\
+\ul{?}\
+\ul{100}\
+\ul{:}\
+\ul{x}\
+\ul{\mbox{*}}\
+\ul{x}\
+\ul{;}\\
+\ul{\}}}\\
+\\
+\noindent \textbf{lexemes:}\\
+\newline
+\begin{tabular}{|l | r|}
+\hline
+keyword		&	float 				\\ 	\hline
+id			&	limitedSquare 		\\ 	\hline
+token		&	(					\\	\hline	
+id			&	x					\\ 	\hline
+token		&	)					\\	\hline
+keyword		&	float				\\	\hline
+id			&	x					\\	\hline
+token		&	;					\\	\hline
+token		&	\{					\\	\hline
+token		&	/\mbox{*}			\\	\hline
+token		&	\mbox{*}/			\\	\hline
+keyword		&	return				\\	\hline
+token		&	(					\\	\hline
+id			&	x					\\	\hline
+relOp		&	\mbox{<=}			\\	\hline
+unary		&	-					\\	\hline
+num			&	10.0				\\	\hline
+boolOp		&	\textbar\textbar	\\	\hline
+id			&	x					\\	\hline
+relOp		&	\mbox{>=}			\\	\hline
+num			&	10.0				\\	\hline
+token		&	)					\\	\hline
+ternaryOp	&	?					\\	\hline
+num			&	100					\\	\hline
+ternaryOp	&	:					\\	\hline
+id			&	x					\\	\hline
+mulOp		&	\mbox{*}			\\	\hline
+id			&	x					\\	\hline
+\end{tabular}
+\newpage
+
+% Problem 3.1.2
+\noindent \textbf{3.1.2}\\
+\newline
+
+\noindent \texttt{
+\ul{Here is a photo of}\
+\ul{\mbox{<}}\
+\ul{B}\
+\ul{\mbox{>}}\
+\ul{my house}\
+\ul{\mbox{<}}\
+\ul{/}\
+\ul{B}\
+\ul{\mbox{>}}\
+\ul{:}\\
+\ul{\mbox{<}}\
+\ul{P}\
+\ul{\mbox{>}}\
+\ul{\mbox{<}}\
+\ul{IMG}\
+\ul{SRC}\
+\ul{=}\
+\ul{"}\
+\ul{house.gif}\
+\ul{"}\
+\ul{\mbox{>}}\
+\ul{\mbox{<}}\
+\ul{BR}\
+\ul{\mbox{>}}\\
+\ul{See}\
+\ul{\mbox{<}}\
+\ul{A}\
+\ul{HREF}\
+\ul{=}\
+\ul{"}\
+\ul{morePix.html}\
+\ul{"}\
+\ul{\mbox{>}}\
+\ul{More Pictures}\
+\ul{\mbox{<}}\
+\ul{/}\
+\ul{A}\
+\ul{\mbox{>}}\
+\ul{if you}\\
+\ul{liked that one.}\
+\ul{\mbox{<}}\
+\ul{P}\
+\ul{\mbox{>}}\\
+}
+\newline
+\textbf{Lexemes are listed on the following page.}
+\newpage
+\textbf{lexemes:}\\
+
+\begin{tabular}{|l | r|}
+\hline
+id		&	Here is a photo of		\\	\hline
+token	&	<						\\	\hline
+keyword	&	B						\\	\hline
+token	&	>						\\	\hline
+id		&	my house				\\	\hline
+token	&	<						\\	\hline
+token	&	/						\\	\hline
+keyword	&	B						\\	\hline
+token	&	>						\\	\hline
+id		&	:						\\	\hline
+token	&	<						\\	\hline
+keyword	&	P						\\	\hline
+token	&	>						\\	\hline
+token	&	<						\\	\hline
+keyword	&	IMG						\\	\hline
+keyword	&	SRC						\\	\hline
+assign	&	=						\\	\hline
+token	&	"						\\	\hline
+id		&	house.gif				\\	\hline
+token	&	"						\\	\hline
+token	&	>						\\	\hline
+token	&	<						\\	\hline
+keyword	&	BR						\\	\hline
+token	&	>						\\	\hline
+id		&	See						\\	\hline
+token	&	<						\\	\hline
+keyword	&	A						\\	\hline
+keyword	&	HREF					\\	\hline
+assign	&	=						\\	\hline
+token	&	"						\\	\hline
+id		&	morePix.html			\\	\hline
+token	&	"						\\	\hline
+token	&	>						\\	\hline
+id		&	More Pictures			\\	\hline
+token	&	<						\\	\hline
+token	&	/						\\	\hline
+keyword	&	A						\\	\hline
+token	&	>						\\	\hline
+id		&	if you liked that one.	\\	\hline
+token	&	<						\\	\hline
+keyword	&	P						\\	\hline
+token	&	>						\\	\hline
+\end{tabular}
+\newpage
+\noindent \textbf{3.3.5a}\\
+\newline
+\begin{tabular}{l c l}
+
+\textit{A} 		& $\rightarrow$ &	a\\
+\textit{E} 		& $\rightarrow$ &	e\\
+\textit{I} 		& $\rightarrow$ &	i\\
+\textit{O} 		& $\rightarrow$ &	o\\
+\textit{U} 		& $\rightarrow$	&	u\\
+
+\textit{other}	& $\rightarrow$	&	b\textbar
+									c\textbar
+									d\textbar
+									f\textbar
+									g\textbar
+									h\textbar
+									j\textbar
+									k\textbar
+									l\textbar
+									m\textbar
+									n\textbar
+									p\textbar
+									q\textbar
+									r\textbar
+									s\textbar
+									t\textbar
+									v\textbar
+									w\textbar
+									x\textbar
+									y\textbar
+									z\\
+
+\textit{alpha}	&	$\rightarrow$ &	(\textit{A $\cup$ 
+											 E $\cup$
+											 I $\cup$
+											 O $\cup$
+											 U $\cup$
+											 other})\textsuperscript{*}\\
+	
+\textit{string} &	$\rightarrow$	&	\textit{other\textsuperscript{*}}\
+								  		\textit{A\textsuperscript{+}}\
+									  	\textit{other\textsuperscript{*}}\
+										\textit{A\textsuperscript{*}}\
+									  	\textit{E\textsuperscript{+}}\
+									  	\textit{other\textsuperscript{*}}\
+										\textit{E\textsuperscript{*}}\
+									  	\textit{I\textsuperscript{+}}\
+									  	\textit{other\textsuperscript{*}}\
+										\textit{I\textsuperscript{*}}\\
+				&					&	\textit{O\textsuperscript{+}}\
+								  		\textit{other\textsuperscript{*}}\
+										\textit{O\textsuperscript{*}}\
+								  		\textit{U\textsuperscript{+}}\
+								  		\textit{other\textsuperscript{*}}\
+										\textit{U\textsuperscript{*}}\
+										\textit{alpha\textsuperscript{*}}\\
+\end{tabular}\\
+
+\newpage
+\noindent \textbf{3.3.5c}\\
+\includegraphics[max size={\textwidth}{\textheight}]{3_3_5c}\\
+
+\newpage
+\noindent \textbf{3.3.5f}\\
+Do this problem.\\
+
+\newpage
+\noindent \textbf{3.3.5h}\\
+Do this problem.\\
+
+\newpage
+\noindent \textbf{3.3.5i}\\
+Do this problem.\\
+
+\end{document}

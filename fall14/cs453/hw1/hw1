@@ -1,0 +1,94 @@
+Name: Aaron Woods
+Course: CS453
+Instructor: Dr. Jain
+Assignment: HW1
+Due Date: 9/24/14
+
+
+Contents of thread-max
+=====================================================================================
+256433
+
+Result of ulimit -Ha before modification
+=====================================================================================
+core file size          (blocks, -c) unlimited
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 128216
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 4096
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 128216
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+
+Result of diff -Naur original_fork.c modified_fork.c
+=====================================================================================
+--- /home/awoods/fork.c	2014-09-21 22:24:23.042253031 -0600
++++ /home/awoods/linux-3.16.3/kernel/fork.c	2014-09-21 22:32:45.309141572 -0600
+@@ -274,6 +274,7 @@
+ 	 * of memory.
+ 	 */
+ 	max_threads = mempages / (8 * THREAD_SIZE / PAGE_SIZE);
++	max_threads *= (95 / 100);
+ 
+ 	/*
+ 	 * we need to allow at least 20 threads to boot a system
+@@ -281,8 +282,8 @@
+ 	if (max_threads < 20)
+ 		max_threads = 20;
+ 
+-	init_task.signal->rlim[RLIMIT_NPROC].rlim_cur = max_threads/2;
+-	init_task.signal->rlim[RLIMIT_NPROC].rlim_max = max_threads/2;
++	init_task.signal->rlim[RLIMIT_NPROC].rlim_cur = max_threads;
++	init_task.signal->rlim[RLIMIT_NPROC].rlim_max = max_threads;
+ 	init_task.signal->rlim[RLIMIT_SIGPENDING] =
+ 		init_task.signal->rlim[RLIMIT_NPROC];
+ }
+
+Result of ulimit -Ha after modification
+=====================================================================================
+core file size          (blocks, -c) unlimited
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 243491
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 4096
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 243491
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+
+Manual calculation: 256433 * 0.95 = 243611.35
+Delta of actual value and expected value: 120.35
+Delta %: 0.00047%
+
+Based on the extremely low delta %, it is clear that my modifications were
+successful.
+
+README
+=====================================================================================
+
+Aside from getting lost in xconfig, I did not have any major difficulties with the
+initial building of the kernel.  After it was built however, I did encounter some
+issues as I tried to modify fork.c.  The problem was that I was not performing the
+proper mathematical operations.  It took me several times changing the arithmetic
+and rebuilding the kernel before I was finally able to do it correctly.  The final
+changes can be seen above in the diff section.
+
+I really enjoyed this assignment.  System-level development is what I am really
+interested in, so being able to modify the operating system at the kernel level
+was very rewarding.  This assignment has served only to soldify my decision to pursue
+system-level development opportunities after graduating.

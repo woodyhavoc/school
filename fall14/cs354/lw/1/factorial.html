@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Hawks Ruby Website</title>
+<link rel="icon" href="imgs/favicon.png" sizes="16x16" type="image/png">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="header">
+<img src="imgs/rubygems.png" alt="rubygems">
+<div class="logo">
+     Ruby Language Website
+  </div>
+   <div class="navigation">
+      <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="links.html">Links to More Information</a></li>
+	<li><a href="comparison.html">Language Comparison</a></li>
+	<li id='current'><a href="installation.html">Installation Instructions</a></li>
+	<li><a href="history.html">Description and History</a></li>
+	<li><a href="code.html">Code Samples</a></li>
+      </ul>
+   </div>
+</div>
+<div class="main">
+<H1>Below is a Factorial function example:</H1>
+<code>
+def fact(n)<br>
+&nbsp;    if n == 0<br>
+&nbsp; &nbsp;       1<br>
+&nbsp;    else<br>
+&nbsp; &nbsp;        n * fact(n-1)<br>
+&nbsp;    end<br>
+end<br>	
+</code>
+
+<p>
+This function demonstrates the recursive abilities available with the Ruby language.  As with any<br>
+factorial function, an original number is passed to the function.  This number is multiplied by the<br>
+return value of the factorial function with the number - 1 passed as a parameter.  This will continue<br>
+until the passed value is equal to 0, at which point the function will return a 1.  Once this happens<br>
+all of the previous numbers will be mulitplied together, and eventually the final product will be returned.<br>	
+</div>
+</body>
+</html>

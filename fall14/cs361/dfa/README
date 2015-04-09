@@ -1,0 +1,54 @@
+****************
+* NFA to DFA
+* CS361
+* 19 Nov 14
+* Aaron Woods
+**************** 
+
+OVERVIEW:
+
+ This program reads NFA information from a file and converts it into
+ a DFA.  After that, it tests a set of strings to see if they are valid
+ against the DFA.
+
+INCLUDED FILES:
+
+ FADriver.java: The driver class which contains the main method.
+ 
+ FiniteAutomata.java: Creates a FiniteAutomata object which reads a file and passes information
+ 					  to a DFA object.
+ 
+ DFA.java: Generates a DFA with the information it is given, then tests strings against that DFA. 
+
+
+BUILDING AND RUNNING:
+
+ To build this program enter the following command:
+ 
+ 	javac FADriver.java
+ 	
+ To run it enter the following command:
+ 
+ 	java FADriver <file name>
+ 
+PROGRAM DESIGN:
+
+ This program accepts an input file which contains NFA information.  It then
+ processes this file, and generates an equivalent DFA.  After this DFA is created,
+ a series of test strings are processed to see if they will be accepted by the DFA.
+ After all of this has been completed, information about the DFA will be printed to
+ the screen.  This information includes the DFA states, transitions, and the results
+ of the tests. 
+
+TESTING:
+
+ To test this program, I used the sample NFA information that I was given.  In addition
+ to this, I made some of my own NFAs, determined the equivalent DFA, and ran a file
+ through my program to ensure it functioned properly.
+
+DISCUSSION:
+
+ I did not encounter too many problems while writing this program.  I had a pretty solid
+ understanding of the NFA and DFA before I began writing it.  The only difficulties I faced
+ were in how to implement the solution.  After I spent some time thinking about it though,
+ the implementation I ended up choosing became apparent to me as the correct route.

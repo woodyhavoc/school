@@ -1,0 +1,25 @@
+digraph c3_3_5
+{
+	rankdir = LR;
+	node [shape = point] hidden;
+	node [shape = doublecircle] final;
+	node [shape = circle];
+	
+	hidden -> 0 [label = "Start"];
+	
+	0 -> 1 [label = "/"];
+	1 -> 2 [label = "*"];
+	2 -> 3 [label = <<I>s</I>>];
+	3 -> 3 [label = <<I>s</I>>];
+	3 -> 4 [label = "\""];
+	4 -> 3 [label = <<I>s</I>>];
+	4 -> 5 [label = "*"];
+	5 -> 3 [label = <<I>s</I>>];
+	5 -> 6 [label = "/"];
+	6 -> 3 [label = <<I>s</I>>];
+	6 -> 7 [label = "\""];
+	7 -> 3 [label = <<I>s</I>>];
+	3 -> 8 [label = "*"];
+	8 -> 3 [label = <<I>s</I>>];
+	8 -> final [label = "/"];
+}

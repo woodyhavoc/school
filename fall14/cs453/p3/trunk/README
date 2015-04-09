@@ -1,0 +1,131 @@
+***************************
+* P3: Producers / Consumers
+* CS453
+* 1 NOV 14
+* Aaron Woods
+*************************** 
+
+OVERVIEW:
+
+ This program creates a number of threads, then has them
+ either create data or consume it.  The purpose of this program
+ is to simulate how an operating system distributes tasks to
+ different threads.
+
+INCLUDED FILES:
+
+ doxygen-config: Generates the doxygen documentation.
+
+ Makefile: Used to build and clean the program.
+
+ README: This file, contains an overview of the piece of software.
+
+ libsrc/common.h: Includes header files that are common to all source
+ 				  files in the directory
+ 
+ libsrc/List.h:  Defines the List class, which is a circular,
+ 				 doubly-linked list.  In this program, it is
+				 used to hold background processes.
+
+ libsrc/List.c:  Implementation of definition contained in List.h.
+
+ libsrc/Makefile: Used to build and clean the libsrc directory.
+
+ libsrc/Node.h:  Defines the Node class which holds a generic void* object.
+
+ libsrc/Node.c:  Implementation of definition contained in Node.h.
+
+ producers-consumers/Item.c: Implementation of definition contained in Item.h
+
+ producers-consumers/Item.h: Defines the Item class, which is a piece of data held by a Node
+
+ producers-consumers/Makefile: Used to build and clean the producers-consumers directory
+
+ producers-consumers/pc.c: Driver for the producers-consumers program, creates a List
+		           and fills it with Items with producers, then removes the items
+			   with consumers.
+
+ producers-consumers/pc-mq.c: Same as pc.c, except creates multiple Lists
+
+ producers-consumers/test-mq.sh: Tests the implementation of pc-mq.c by running it through a series of
+			 	 different command-line argument combinations.
+
+ producers-consumers/test.sh: Test the implementation of pc.c by running it through a series of different
+			      command-line argument combinations.
+
+BUILDING AND RUNNING:
+
+ To build the program, enter the command 'make' from the
+ top-level directory.  After everything has been compiled and linked,
+ enter the command:
+
+	./pc <poolsize> <#items/producer> <#producers> <#consumers> <sleep interval (microseconds)>
+
+ for the single-threaded version or:
+	
+ 	./pc-mq <#queues> <poolsize> <#items/producer> <#producers> <#consumers> <sleep interval (microseconds)>
+ 
+ for the multi-threaded version.
+ 
+ To remove generated program files, use the command 'make clean' from the top-level directory.
+
+PROGRAM DESIGN:
+
+ The program uses a doubly-linked list to hold all the generated data from the producers.
+ The same list is used for the consumers to consume the data.  As the producers create data,
+ they add it to the list.  When a consumer is ready to consume, it removes a piece of data
+ from the list.  This continues for the producers until the production quota has been met,
+ and it continues for the consumers until there are no more pieces of data to be consumed.
+
+ In the multi-queued version, the producers add to the various lists in a round-robin fashion.
+ Likewise, the consumers consume the data in the same fashion. 
+
+TESTING:
+
+ To test my program, I used the provided test script.  Before this test script would work,
+ I had to make my doubly-linked list a thread-safe one.  Before I did this, I would just hang
+ on the first call to the program.  I adapted the provided script to one handle one for the
+ multi-queued version of the program.  In addition to this, I tested both my programs with
+ valgrind.  In testing both programs with valgrind, I did notice that I was always four 'frees'
+ short of the number of 'mallocs'.  Despite this, there were no blocks of memory that were lost.
+ Also, all of the memory that was still reachable, had something to do with pthread library calls,
+ and not my own code.
+
+ It is also worth noting that valgrind only ran successfully on my machine at home.  I kept getting
+ the following error on onyx:
+ 
+==9905== valgrind: Unrecognised instruction at address 0x3f67011298.
+==9905==    at 0x3F67011298: __lll_unlock_elision (elision-unlock.c:33)
+==9905==    by 0x4C4373B: finishUp (List.c:428)
+==9905==    by 0x401187: main (pc.c:112)
+==9905== Your program just tried to execute an instruction that Valgrind
+==9905== did not recognise.  There are two possible reasons for this.
+==9905== 1. Your program has a bug and erroneously jumped to a non-code
+==9905==    location.  If you are running Memcheck and you just saw a
+==9905==    warning about a bad jump, it's probably your program's fault.
+==9905== 2. The instruction is legitimate but Valgrind doesn't handle it,
+==9905==    i.e. it's Valgrind's fault.  If you think this is the case or
+==9905==    you are not sure, please let us know and we'll try to fix it.
+==9905== Either way, Valgrind will now raise a SIGILL signal which will
+==9905== probably kill your program.
+==9905== 
+==9905== Process terminating with default action of signal 4 (SIGILL)
+==9905==  Illegal opcode at address 0x3F67011298
+==9905==    at 0x3F67011298: __lll_unlock_elision (elision-unlock.c:33)
+==9905==    by 0x4C4373B: finishUp (List.c:428)
+==9905==    by 0x401187: main (pc.c:112)
+
+ I believe it may have something to do with the fact that the version of valgrind
+ I use at home is newer than the one on onyx.  The fact that it ran successfully
+ at home without killing my program supports this claim.
+
+DISCUSSION:
+ 
+ Aside from having to internalize the concepts of monitors, mutex locks, and
+ waiting on conditions, the biggest issues I faced in this program are described
+ above in the testing section. 
+ 
+EXTRA CREDIT:
+
+ I was able to successfully implement the multi-queue version of the program using
+ multiple lists.  That program is contained in pc-mq.c

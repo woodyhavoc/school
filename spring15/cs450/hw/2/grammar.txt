@@ -1,0 +1,80 @@
+program  : block
+
+block    : '{' decls stmts '}'
+
+decls    : decl decls
+		 |
+
+decl     : type id ';'
+
+type     : basic type1
+       
+type1	 : '[' num ']' type1
+		 |
+
+basic    : 'int'         
+		 | 'float'
+
+stmts    : stmt stmts
+		 |
+
+stmt     : loc '=' bool ';'
+		 | 'if' '(' bool ')' stmt
+		 | 'if' '(' bool ')' stmt 'else' stmt
+		 | 'while' '(' bool ')' stmt
+		 | 'do' stmt 'while' '(' bool ')' ';'
+		 | 'break' ';'
+		 | block
+		 | 'read' loc ';'
+		 | 'write' bool ';'
+
+loc      : id loc1
+
+loc1	 : '[' bool ']' loc1
+		 |
+
+bool     : join bool1  
+      
+bool1	 : '||' join bool1
+		 |
+
+join     : equality join1
+
+join1	 : '&&' equality join1
+		 |
+
+equality : rel equality1
+
+equality1: '==' rel equality1
+		 | '!=' rel equality1
+		 |
+	 
+rel      : expr '<' expr         
+		 | expr '<=' expr         
+		 | expr '>=' expr         
+		 | expr '>' expr         
+		 | expr
+
+expr     : term expr1 
+        
+expr1	 : '+' term expr1
+		 | '-' term expr1
+		 |
+
+term     : unary term1
+
+term1	 : '*' unary term1
+		 | '/' unary term1
+		 |
+
+unary    : '!' unary         
+		 | '-' unary         
+		 | factor
+	 
+factor   : '(' bool ')'         
+		 | loc         
+		 | num         
+		 | real         
+		 | 'true'         
+		 | 'false'
+	 

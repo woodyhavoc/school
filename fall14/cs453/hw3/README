@@ -1,0 +1,141 @@
+***************************
+* HW3: File Access Monitors
+* CS 453
+* 7 Nov 14
+* Aaron Woods
+*************************** 
+
+OVERVIEW:
+
+ Both versions of this program simulate a file
+ being accessed by multiple threads.  Access is
+ only allowed until the combined total of the
+ thread IDs is less than the number of processors
+ on the machine.
+
+INCLUDED FILES:
+
+ FileAccess.java: This class contains the methods needed to simulate
+ 				  the file reading.  It also implements the interface
+				  "Runnable" which is required for multi-threading.
+
+ FileAccessBoss.java: This class contains the main method for the program.
+ 					  It is responsible for generating the threads to read
+					  the file.
+
+ FileAccess.h: This header file contains the all the function signatures needed
+ 			   to simulate the file reading by the multiple threads.
+
+ FileAccess.c: This file defines the functions in FileAccess.h.  It is responsible
+ 			   for ensuring that the read operations are done in a thread-safe manner.
+
+ FileAccessDriver.c: This file is responsible for generating all the necessary threads
+ 					 to perform the simulated file read operation.  It contains the
+					 main function.
+
+BUILDING AND RUNNING:
+
+ To build these programs, simply execute the command "make" from
+ within the directory.  To clean the object files after running
+ the program, the command "make clean" can be used.
+
+ To run the C version after compiling, execute the following command:
+
+ 	./fileAccess
+
+ To run the Java version after compiling, execute the following command:
+
+ 	java FileAccessBoss
+  
+PROGRAM DESIGN:
+
+ Both of the programs operate in the same manner, so only one explanation
+ will be given.  The first part of the program simply initializes the variables
+ that will be important throughout the program (maxCount, mutex, condition, etc...).
+ The program then generates a number of threads equal to twice the number of 
+ processors available.  After that the startAccess() function is called, which begins
+ the simulation.  If an id value is greater than the maximum allowed, a message will
+ say as much, and that thread will immediately exit the startAccess() function.
+ For those that do make it through, they will be held inside of pthread_cond_wait()
+ until the sum of thread ID values is less than the maximum amount.
+ 
+ After they get through that portion, they will print a message saying they are accessing
+ the file.  Next, the endAccess() function is called, which decrements the total sum 
+ of thread ID values, and prints that the thread is ending access to the file.
+ 
+ After all of this, the threads are joined back together, and the program exits.  
+  
+TESTING:
+
+ Once I got my program working, I tested it by running it multiple times to ensure
+ that there were no random race conditions that would cause a deadlock.  In addition
+ to this, I also ran both versions of the program on multiple machines to ensure
+ that the algorithm was correct. 
+
+DISCUSSION:
+ 
+ I did not have too much difficulty with this assignment.  It was very straight forward.
+ I did enjoy that it helped to reinforce the concept of monitors and threads.  Even more
+ helpful was that I had to do it in two different languages.  I belive that now I should
+ be able to handle threading in any language I use once I figure out the appropriate
+ syntax.
+
+PSEUDOCODE:
+
+ monitor FileAccess
+ {
+	 private:
+	 	
+		mutex;
+		condition;
+		maxThreads;
+		threadTotal;
+	 
+	 public:
+
+	 FileAccess(int n)
+	 {
+		maxThreads = n;
+		threadTotal = 0;
+		init(mutex);
+		init(condition);
+	 }
+
+	 void StartAccess(int id)
+	 {
+		mutex.lock;
+
+		if(id > maxThreads)
+		{
+			print "File Access Denied for ID: " + id + ", ID too big";
+			mutex.unlock;
+			return;
+		}
+
+		threadTotal += id;
+
+		while(threadTotal > maxThreads)
+		{
+			wait(condition, mutex);
+		}
+		
+		mutex.unlock;
+		
+		print "Thread ID: " + id + " starting file access";
+
+		EndAccess(id);
+	 }
+
+	 void EndAccess(int id)
+	 {
+		mutex.lock;
+
+		threadTotal -= id;
+
+		print "Thread ID: " + id + "ending file access";
+
+		mutex.unlock;
+
+		condition.signal;
+	 }
+ }

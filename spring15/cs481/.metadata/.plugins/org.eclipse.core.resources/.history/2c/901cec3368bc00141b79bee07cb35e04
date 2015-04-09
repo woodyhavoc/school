@@ -1,0 +1,21 @@
+package com.tjabz.MultiThreadedApp;
+
+import jcuda.Pointer;
+import jcuda.runtime.JCuda;
+
+public class Correlator {
+    public static void main(String args[]) {
+        Pointer pointer = new Pointer();
+        JCuda.cudaMalloc(pointer, 4);
+        System.out.println("===================================" +
+			   "\n=                                 =" +
+			   "\n=  WE DID IT!                     =" +
+			   "\n=                                 =" +
+			   "\n=                                 =" +
+			   "\n===================================" +
+			   "\nPointer" +
+			   "\n"+pointer +
+			   "\n===================================");
+        JCuda.cudaFree(pointer);
+    }
+}

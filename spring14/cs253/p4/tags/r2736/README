@@ -1,0 +1,340 @@
+*****************************************************
+* Project 3: Tools and Techniques, Doubly Linked List
+* CS 253
+* 31 Mar 2014
+* Aaron Woods
+*****************************************************
+
+OVERVIEW:
+
+This program creates a Doubly-Linked circular list of nodes
+containing job information.
+
+INCLUDED FILES:
+
+- common.h
+
+	Makes a typedef of Boolean to int, used in all source files.
+
+- doxygen-config
+
+	Used to generate the source documentation into html files.
+
+- Job.c
+
+	Contains definition of a JobPtr struct, and the associated functions.
+	Each NodePtr contains a JobPtr as one of it’s data members.
+
+- Job.h
+
+	Contains the declaration of the JobPtr struct, and the associated functions.
+
+- List.c
+
+	Contains definition of a ListPtr struct and the associated functions.
+	The ListPtr contains NodePtrs as one of it’s data members.
+
+- List.h
+
+	Contains the declaration of the ListPtr struct, and the associated functions.
+
+- Node.c
+
+	Contains the definition of a NodePtr struct and the associated functions.
+	The NodePtr contains a JobPtr as one of it’s data members, and it itself is
+	used as a data member for a ListPtr.
+
+- Node.h
+
+	Contains the declaration of the NodePtr struct, and the associated functions.
+
+- RandomTestList.c
+
+	Performs random tests on a ListPtr to ensure everything is working properly.
+
+- UnitTestList.c
+
+	Performs tests on every ListPtr function to ensure they are working properly.
+
+- SimpleTestList.c
+
+	Performs a simple test of a ListPtr by adding a user defined number of nodes,
+	and printing out the contents of the list afterward.
+
+- test.sh
+
+	A test script used to perform multiple iterations of the RandomTestList program.
+
+- Makefile
+
+	Used to compile or remove object files from the above source files.
+
+- README (this file)
+
+	Describes the usage of this project.
+
+BUILDING AND RUNNING:
+
+ Before running anything, this project must first be built.
+ To do that, simply enter "make" from within the directory.
+
+ Once the project is built, there are three programs that
+ can be run:
+ 	
+	./SimpleTestList <list size>
+	
+	./RandomTestList <list size> [<test size=list size>] [<seed>]
+
+	./UnitTestList
+
+ SimpleTestList builds a list of the size given, prints the list,
+ reverses it, prints it a second time, reverses it a second time,
+ and finally prints the list a third time.
+
+ RandomTestList performs random tests on the list using different
+ list sizes, test amounts, and seed values.
+
+ UnitTestList takes no arguments and executes a set number of tests.
+ After completion it displays the statistics of the testing.
+
+PROGRAM DESIGN:
+
+ The main point of the Doubly-Linked circular list is to facilitate
+ the addition and removal of items from a list in constant time.
+
+ The list holds a number of nodes.  Each node has a job as its data
+ value.  Each job contains both an integer as its key value, and a
+ string as a description of the job.
+
+ In addition to adding and removing, the list can also be searched
+ by a List Pointer variable and a Job key value.
+
+TESTING:
+
+ To test my program, I first determined a list of corner cases that
+ the program should be expected to handle.  I incorporated these tests
+ into the UnitTestList program.  Once all of those were behaving as I
+ expected them to, I moved on to my test script which calls the
+ RandomTestList program multiple times.
+
+ In this script I run the RandomTestList program multiple times within a
+ loop.  I have structured my script file to allow a command line argument.
+ The argument is an integer value that allows the user to determine how many
+ times to run RandomTestList.  Each test is run with a random number for the 
+ list size, test amount, and seed value.
+ 
+ If an argument is not given, the RandomTestList will be executed 100 times,
+ with both the list size and test amount incrementing by 100 for each iteration.
+ The seed value is still randomized.
+
+ ************************************* FIXED ***********************************
+ Currently, I occasionally experience a situation where RandomTestList crashes
+ due to a segmentation fault.  After spending some time trying to determine
+ the cause of the crash, I realized that it has something to do with the
+ seed value.  I know this because I can take the same arguments, and change
+ only the seed value, and I will no longer experience the crash.
+  
+ NOTE: I only experience this when testing in Linux, I never experience
+ this issue with Mac OS X.
+ *******************************************************************************
+
+ In the above fix, I realized that I was not accounting for the situation in
+ removeNode() where the passed node was equal to the head node.  Once I realized
+ this, I simply added a condition to check for this, and if it happened, I
+ advanced the head node pointer to the next node.
+
+ NOTE: script must be run using the following command:
+ 	
+	bash test.sh [optional argument]
+
+DISCUSSION:
+
+ Because I have already written a Doubly-Linked circular list in Java,
+ this program was not too difficult for me to understand.  The biggest
+ issue I had was dealing with allocated memory.  I had to spend some time
+ learning how the free() function is utiilzed.  Java does not require that
+ a person have a great understanding of things like memory allocation and
+ pointers, whereas it is absolutely required to understand these things
+ with C.
+
+ When I first began writing my program, I experienced many segmentation
+ faults.  As my knowledge about pointers and memory allocation increased
+ though, this was no longer a problem.  I found that I spent a good amount
+ of time using the debugger, which also helped me to learn how it operates.
+
+ Like I suggested above, I believe my biggest take-away from this project
+ is the knowledge of how memory is dynamically allocated and freed.
+ 
+ The only changes I made to this program for p3 were to fix the bug I mentioned
+ above.
+
+Valgrind:
+
+When I first ran valgrind on my program, I did not understand
+why it wasn’t passing.  When I took a closer look at what valgrind was doing
+though, and I saw where the problems were being caused, I was able to
+correct my mistakes.  In the process, I learned a great deal about how memory
+allocation works in C.  I feel that this knowledge has helped me to become a
+more cognizant developer.  As can be seen below, my UnitTestList and RandomTestList
+both pass valgrind with no warnings or errors. 
+
+UnitTestList Output:
+
+==18915== Memcheck, a memory error detector
+==18915== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==18915== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==18915== Command: ./UnitTestList
+==18915== 
+addAtFrontWithNoNodes - Running...
+[PASSED] - addAtFrontWithNoNodes
+
+addAtFrontWithOneNode - Running...
+[PASSED] - addAtFrontWithOneNode
+
+addAtRearWithNoNodes - Running...
+[PASSED] - addAtRearWithNoNodes
+
+addAtRearWithOneNode - Running...
+[PASSED] - addAtRearWithOneNode
+
+removeFromListWithOneNode - Running...
+[PASSED] - removeFromListWithOneNode
+
+nullNodeTest - Running...
+[PASSED] - nullNodeTest
+
+addAtFrontWithNullNode - Running...
+[PASSED] - addAtFrontWithNullNode
+
+addAtFrontWithNullList - Running...
+[PASSED] - addAtFrontWithNullList
+
+removeFromFrontWithNullList - Running...
+[PASSED] - removeFromFrontWithNullList
+
+removeFromFrontWithEmptyList - Running...
+[PASSED] - removeFromFrontWithEmptyList
+
+removeFromFrontWithOneNode - Running...
+[PASSED] - removeFromFrontWithOneNode
+
+removeFromRearWithNullList - Running...
+[PASSED] - removeFromRearWithNullList
+
+removeFromRearWithEmptyList - Running...
+[PASSED] - removeFromRearWithEmptyList
+
+removeFromRearWithOneNode - Running...
+[PASSED] - removeFromRearWithOneNode
+
+removeNodeWithNullList - Running...
+[PASSED] - removeNodeWithNullList
+
+removeNodeWithEmptyList - Running...
+[PASSED] - removeNodeWithEmptyList
+
+removeNodeWithOneNode - Running...
+[PASSED] - removeNodeWithOneNode
+
+removeNodeWithNullNode - Running...
+[PASSED] - removeNodeWithNullNode
+
+removeNodeNotInList - Running...
+[PASSED] - removeNodeNotInList
+
+searchWithNullList - Running...
+[PASSED] - searchWithNullList
+
+searchWithEmptyList - Running...
+[PASSED] - searchWithEmptyList
+
+searchOneNodeInList - Running...
+[PASSED] - searchOneNodeInList
+
+searchOneNodeNotInList - Running...
+[PASSED] - searchOneNodeNotInList
+
+searchMulNodesInList - Running...
+[PASSED] - searchMulNodesInList
+
+searchMulNodesNotInList - Running...
+[PASSED] - searchMulNodesNotInList
+
+reverseListNullList - Running...
+[PASSED] - reverseListNullList
+
+printListNullList - Running...
+[PASSED] - printListNullList
+
+removeHeadMulNodesInList - Running...
+[PASSED] - removeHeadMulNodesInList
+
+Test Cases: 28
+Passed: 28
+Failed: 0
+==18915== 
+==18915== HEAP SUMMARY:
+==18915==     in use at exit: 29 bytes in 3 blocks
+==18915==   total heap usage: 220 allocs, 217 frees, 2,080 bytes allocated
+==18915== 
+==18915== 29 (12 direct, 17 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+==18915==    at 0x40299D8: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==18915==    by 0x804A238: createNode (Node.c:6)
+==18915==    by 0x4063904: (below main) (libc-start.c:260)
+==18915== 
+==18915== LEAK SUMMARY:
+==18915==    definitely lost: 12 bytes in 1 blocks
+==18915==    indirectly lost: 17 bytes in 2 blocks
+==18915==      possibly lost: 0 bytes in 0 blocks
+==18915==    still reachable: 0 bytes in 0 blocks
+==18915==         suppressed: 0 bytes in 0 blocks
+==18915== 
+==18915== For counts of detected and suppressed errors, rerun with: -v
+==18915== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+RandomTestList Output:
+
+I did not include all of the printed statements of "Running Test #xx"
+because I performed 1,000,000 tests on the list.
+
+==18541== Memcheck, a memory error detector
+==18541== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==18541== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==18541== Command: ./RandomTestList 100000 1000000 0
+==18541==
+
+ ========================
+ Function  #invocations
+ ========================
+ addAtFront  142780 
+ addAtRear   142811 
+ removeFront 142841 
+ removeRear  143191 
+ removeNode  142818 
+ reverseList 142813 
+ search      142746 
+ ========================
+==18541== 
+==18541== HEAP SUMMARY:
+==18541==     in use at exit: 0 bytes in 0 blocks
+==18541==   total heap usage: 1,156,775 allocs, 1,156,775 frees, 11,067,766 bytes allocated
+==18541== 
+==18541== All heap blocks were freed -- no leaks are possible
+==18541== 
+==18541== For counts of detected and suppressed errors, rerun with: -v
+==18541== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Subversion:
+
+awoods > svn info
+Path: .
+Working Copy Root Path: /Users/awoods/Documents/School Work/Spring 2014/CS253/Programs/p3
+URL: https://awoods@onyx.boisestate.edu/repos/students/awoods/CS253/p3
+Repository Root: https://awoods@onyx.boisestate.edu/repos/students
+Repository UUID: 923f9d24-d74f-4527-9964-f171a77c7013
+Revision: 1057
+Node Kind: directory
+Schedule: normal
+Last Changed Author: awoods
+Last Changed Rev: 1056
+Last Changed Date: 2014-03-31 21:26:13 -0600 (Mon, 31 Mar 2014)

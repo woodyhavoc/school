@@ -1,0 +1,9 @@
+Parsing error, function: bool, line no.: 10, col. no.: 7
+scan error: 59 (line: 10, char 7)
+scan error: 125 (line: 10, char 9)
+scan error: 261 (line: 10, char 11)
+scan error: 40 (line: 10, char 12)
+Parsing error, function: bool, line no.: 11, col. no.: 2
+scan error: 41 (line: 11, char 2)
+scan error: 59 (line: 11, char 8)
+scan error: 125 (line: 11, char 9)

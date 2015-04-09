@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1426354196568_1" label="PearsonCorrelation" name="PearsonCorrelation">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SingleThreadedApp" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CS471" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/MultiThreadedApp" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1424809722501_0" label="Window Working Set" name="Aggregate for window 1424809722500"/>
+</workingSetManager>

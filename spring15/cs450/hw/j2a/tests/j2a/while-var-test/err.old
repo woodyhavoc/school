@@ -1,0 +1,4 @@
+Parsing error, function: bool, line no.: 8, col. no.: 8
+scan error: 41 (line: 8, char 8)
+Parsing error, function: stmt, line no.: 8, col. no.: 10
+scan error: 125 (line: 8, char 10)

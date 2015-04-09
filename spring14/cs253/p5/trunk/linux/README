@@ -1,0 +1,60 @@
+****************
+* P5: Processes and Signals
+* CS253
+* 11 May 2014
+* Aaron Woods
+**************** 
+
+OVERVIEW:
+ 
+ This project is split into two portions, a Linux portion
+ and a Windows portion.  Both parts perform the same function,
+ except with a different API.  These programs create a process
+ for each processor core.  Each process generates 3 million numbers
+ and counts the number that are in the range of 90 to 110.
+ After a period of time given by a command line argument, an alarm 
+ goes off and kills the child processes.  After this the program exits.
+
+INCLUDED FILES:
+
+ Makefile
+ godot.c
+ README
+ ms-windows project folder
+
+BUILDING AND RUNNING:
+
+ The Windows portion of the project should be run via Visual Studio.
+ 
+ To run the Linux portion of the project, navigate to the directory
+ and enter "make."  This will compile the program.  Once that is completed,
+ enter the following command:
+
+ ./godot <integer value greater than zero>
+
+PROGRAM DESIGN:
+
+ The main concept of this program is working with processes.  The biggest
+ take away was understanding whether you are dealing with a parent or child
+ process.  This program was simpler than previous ones in that it was
+ entirely contained in one file.
+
+ The parent process generates a child process for each core the processor has.
+ Each child process generates 300 million random numbers in an infinite loop
+ until it is terminated by the parent process.
+ 
+TESTING:
+
+ Once I got my program working, the most testing I did concerned the user's
+ command line argument.  I wanted to make sure that the user could not supply
+ any arguments that were not a integer value greater than zero. 
+
+DISCUSSION:
+ 
+ The problems I encountered stemmed mostly from my lack of understanding
+ of how processes work.  Once I realized what was happening though, I
+ did not find the implementation too difficult.
+ 
+EXTRA CREDIT:
+
+None.

@@ -1,0 +1,105 @@
+**************************
+* P5: Buddy System Memory Management
+* CS453
+* 14 Dec 14
+* Aaron Woods
+************************** 
+
+OVERVIEW:
+
+ This program adds manual memory management to the shell program
+ I created earlier in the semester.
+
+INCLUDED FILES:
+
+├── buddy
+│   ├── buddy.c - Implements the functions declared in buddy.h
+│   ├── buddy.h - Declares all the functions needed for the buddy memory management system
+│   ├── buddy-test.c - Tests the implementation of the buddy management system
+│   ├── buddy-unit-test.c - Tests each function of the buddy management system
+│   ├── Makefile - Builds the source code in the buddy directory
+│   └── malloc-test.c - Tests the performance of the system malloc command
+├── dash
+│   ├── Command.c - Implements the functions declared in Command.h
+│   ├── Command.h - Defines the functions for the Command class
+│   ├── headers.h - A header file that includes most of the other necessary header files
+│   ├── Job.c - Implements the functions declared in Job.h
+│   ├── Job.h - Defines the functions for the Job class
+│   ├── Makefile - Builds the source code in the dash directory
+│   ├── mydash.c - Main source file, contains the algorithm for running the dash program
+│   ├── svn_version.c - Generates the current svn version number
+│   └── valgrind.supp - Used to suppress memory leaks in valgrind
+├── doxygen-config - Contains configuration information for doxygen
+├── include
+├── lib
+├── libsrc
+│   ├── common.h - Includes header files that are common to the Linked List classes
+│   ├── List.c - Implements the functions declared in Job.h
+│   ├── List.h - Declares the functions for the Job class
+│   ├── Makefile - Builds the source code in the libsrc directory
+│   ├── Node.c - Implements the functions declared in Node.h
+│   └── Node.h - Declares the functions for the Node class
+├── Makefile - Navigates through all sub-directories and runs the respective Makefile commands
+└── README - This file, describes the purpose and design of the program
+
+
+BUILDING AND RUNNING:
+
+ To build the program, enter the command 'make' from the
+ top-level directory.  After everything has been compiled and linked,
+ enter the command 
+ 
+  LD_LIBRARY_PATH=$(pwd) LD_PRELOAD=libbuddy.so ./mydash
+  
+  and the program will begin to execute. 
+
+PROGRAM DESIGN:
+
+ The program is treated by the readline library like a file, with the
+ user continuously able to give system commands until they decide to
+ exit.  When a user enters a command, it is passed to a Command pointer
+ which breaks it down into tokens.  Next, this command is passed to execvp,
+ and the command is executed.  If the '&' is at the end of the command, 
+ the program will run in the background, and a Job pointer will be added
+ to the Linked List.
+ 
+ In addition to this, it contains a manually written memory management system
+ that follows the same basic design as the OS level memory manager.  The various
+ memory functions are used instead of the the OS level ones.
+
+TESTING:
+
+ To test my program I performed the following tests:
+
+ ls
+ ls -a
+ gedit
+ gedit &
+ cd ..
+ cd .
+ cd
+ touch file
+ rm file
+ cp file ../
+ rm ../file
+ various man pages
+ called ./mydash from within the dash
+ ssh into onyx
+ jobs
+ tab completion
+ empty commands
+ EOF
+ exit
+ setting the prompt variable
+ show svn global revision number
+ valgrind
+ 
+ I ran these to ensure that I could allocate and free memory as expected.
+
+DISCUSSION:
+ 
+ I learned a great deal about how memory management works at an operating system
+ level during this assignment.  It no longer seems like such a great mystery.  I
+ originally had some issues trying to wrap my head around what I needed to do.  After
+ some studying though, I was able to gain the knowledge I needed to complete the
+ assignment.

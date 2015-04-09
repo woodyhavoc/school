@@ -1,0 +1,108 @@
+*****************************************
+* Project 3: Tools and Techniques, Search
+* CS 253
+* 31 Mar 2014
+* Aaron Woods
+*****************************************
+
+OVERVIEW:
+
+ This program stores integer values from a text file into an
+ integer array.  It then prompts the user to search for a value.
+ If the value is contained in the array, it displays which index
+ it is located in, a message is displayed saying the number is
+ not in the array.  The search is conducted using a binary search.
+
+INCLUDED FILES:
+
+- search.c
+
+	Performs a binary search on an integer array when a user enters a value.
+	Array is generated from contents of numbers.txt.
+
+- numbers.txt
+
+	Text file containing a sorted list of numbers, one number per line.
+
+- gdb.log
+
+	Log file of me using gdb to find the bugs in search.c
+
+- Makefile
+
+	Compiles or removes object files generated from search.c
+
+- README (this file)
+
+	Describes the usage of this program.
+
+BUILDING AND RUNNING:
+
+ To compile the program, simply navigate to the correct directory and
+ enter “make” in the command-line (without quotes).
+
+ To run the program, enter “./search” in the command-line (without quotes).
+
+PROGRAM DESIGN:
+
+ When the program is running, it will prompt the user to enter a number to be
+ searched for.  If the number given is contained in the array, it’s index will
+ be displayed.  If not, a message saying as much will be displayed.  This will
+ continue until the user enters “-1” or manually ends the program.
+
+
+ To perform the search, a function “binary_search()” is called, with the user input
+ passed as a parameter.  At the start of the function, integer values ‘high’ and ‘low’ are
+ initialized, which both being at their respective ends of the array.  Also, a value
+ ‘middle’ is computed by adding high and low together, and dividing by 2.  The function
+ executes a loop until some condition forces it to stop, either the number is contained,
+ and the index is found, or the number does not exist in the array.
+
+ If the value passed is less than ‘middle’, ‘high’ is set equal to ‘middle’, ‘middle’ is
+ computed again, and the loop starts over.  If the value passed is greater than ‘middle’,
+ ‘low’ is set to ‘middle’, ‘middle’ is computed again, and the loop starts over.  This
+ continues until one of the above cases is met.
+
+TESTING:
+
+ To test this program, I used values that were contained in “numbers.txt,”
+ as well as numbers that were not in there.  I also used values that were not
+ numbers to ensure I handled those cases correctly.
+
+
+DISCUSSION:
+ 
+ All of the issues I encountered are listed below in the “Corrections” section.
+ 
+ The most challenging part of this project was probably handling the infinite
+ loop situation, which is described below.
+
+
+Corrections
+-----------
+
+1. Added & to front of variable in sscanf function, needed to reference the address of the
+   variable, so value can be stored.
+   
+   After fix, initial prompt for user to enter number is displayed, infinite loop after
+   value is entered by user.
+   
+2. Adjusted range for printing the index of the value from (index > 0) to (index >= 0).
+
+   Before fix, the value 4 (index 0) was found, but the information was not printed, after
+   the fix, the information for the value 4 was displayed just fine.
+
+3. Added conditional statements in function binary_search() to account for situation where
+   the difference between high and low is 1, and the middle value is equal to high or low.
+
+   Before this fix, the program would stay in an infinite loop if a number was entered by the
+   user that did not exist in the file being searched.  After the fix, any number can be
+   entered and the appropriate success or failure message will be displayed.
+
+4. Added a function isDigit() called in main() to check if the first character of user input is a
+   valid integer value.  If it is not, a message is displayed, and execution returns to the
+   top of the loop.
+
+5. Added a function checkLetters() to check if there are any characters other than digits entered
+   by the user.  Since this function is called after isDigit(), it will only inform the user
+   that all characters after the valid number will be ignored.

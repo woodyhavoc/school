@@ -1,0 +1,9 @@
+{
+	float i;
+	float j;
+	float k;
+
+	i = 10.0;
+	j = 11.0;
+	k = 12.0;
+}

@@ -1,0 +1,118 @@
+****************
+* P2: Webstats
+* CS 453
+* 20 OCT 14
+* Aaron Woods
+**************** 
+
+OVERVIEW:
+
+ This program processes webstat information pulled from a website,
+ it then prints out the information in a meaninful table.
+
+INCLUDED FILES:
+
+ ms-windows/webstats/webstats.sln		Visual Studio solution file
+
+ ms-windows/webstats/webstats/webstats.cpp 	Main source file for VS
+
+ 							*/webstats.vcxproj VS Project file
+
+ README		This file
+
+ version1/error.c	Source file for error handling
+
+ 		*/Makefile	Used to build project, and clean directory
+
+		*/ourhdr.h	Custom header file
+
+		*/PThread.class		PThread class used for threads in Java version
+
+		*/webstats.c		Main source file for Linux version
+
+		*/Webstats.java		Main source file for Java version 
+
+BUILDING AND RUNNING:
+
+ To build the Linux/Java project, enter the following:
+ 
+ 	make
+	
+	Linux:		./webstats {filesToBeProcessed}
+	
+	Java:		java Webstats {filesToBeProcessed}
+	
+ To build the MS-Windows project, do the following:
+ 
+ 	Open the .vcxproj file with Visual Studio 201[2|3]
+
+	Build the project from the "Build" menu at the top of the VS window
+
+	Either enter all the file names as parameters with the debugger, or
+	use PowerShell to navigate to the directory which contains the executable,
+	and enter the following:
+
+		.\webstats.exe {.\files .\To .\Be .\Processed}
+
+PROGRAM DESIGN:
+
+ The program begins by creating a thread for each file that is to be processed.
+ After the threads are created, they each enter a function that will process their
+ file.  As the file is processing, it is updating information about the webstats
+ in variables specific to each thread.  After the thread's file has been processed
+ completely, it updates the global webstat variables with the values contained in
+ its local variables.
+
+ The part of the alogorithm in which the global variables are updated are locked
+ so that only one thread may access the function at any given time.  This locked
+ portion is done at the very end in order to maximize the performance.
+
+TESTING:
+
+ To test my program, I ran each version single-threaded will all of the test
+ files, and timed the execution.  I then ran my multi-threaded version, again
+ timing the execution, and compared the results.  I knew I had written the program
+ correctly based upon the speedup I was getting for each version.
+
+DISCUSSION:
+ 
+ The first issue I had was learning how the mutex's worked.  It was a concept I
+ to spend some time thinking about.  Once I realized how they were to be used, I
+ was able to get my Linux version working very easily, though not optimally at first.
+
+ The 'synchronized' keyword in Java, I understood quickly.  My trouble there was first
+ learning how the Threads were to be created.  Once I understood that I had to make a
+ new class that implemented "Runnable" I was able to get it working without much
+ difficulty.
+
+ With the MS-Windows version, I had trouble figuring the MS version of the keywords
+ and functions that I needed to use.  After I figured out what was going on, again
+ it was not difficult to get the program working.  I did notice at first that I was
+ getting a terrible slow-down with my multi-threaded version.  I realized after talking
+ to Dr. Jain, that this was due to the slow rpms of the HDD I was running the program
+ on.  Trying it on a different HDD confirmed this.
+
+ Finally, I realized that I could optimize my algorithm by only requiring each thread
+ to update the global values after the file had been completely processed.  Doing this
+ gave me a speedup that was much like the difference between single-threaded and
+ multi-threaded.
+ 
+ TIMING:
+
+ Linux:
+ 	
+	single-thread - 5.280s
+	multi-thread - 0.800s
+	speedup: 6.6
+
+ Java:
+
+ 	single-thread - 8.488s
+	multi-thread - 3.377s
+	speedup: 2.51
+
+ Windows:
+
+ 	single-thread - 50s
+ 	multi-thread - 45s
+	speedup: 1.1

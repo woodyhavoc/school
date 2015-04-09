@@ -1,0 +1,113 @@
+****************
+* P1: Shell Part 1
+* CS453
+* 1 OCT 14
+* Aaron Woods
+**************** 
+
+OVERVIEW:
+
+ This program makes an interactive shell similar to
+ the one provided in a Linux distribution.
+
+
+INCLUDED FILES:
+
+ doxygen-config: Generates the doxygen documentation.
+
+ Makefile: Used to build and clean the program.
+
+ README: This file, contains an overview of the piece of software.
+
+ dash/Command.h: Defines the Command class which is used to
+ 				 handle the command that is given by the user,
+				 and make it so it can be passed to execvp.
+
+ dash/Command.c: Implementation of definition contained in
+ 				 Command.h.
+
+ dash/headers.h: Includes header files that are useful in many
+ 				 source files.
+
+ dash/Job.h: 	 Defines the Job class which when used, is stored
+ 				 inside a linked list.
+
+ dash/Job.c: 	 Implementation of definition contained in Job.h.
+
+ dash/Makefile:	 Used to build and clean the dash directory.
+
+ dash/mydash.c:  Driver for the dash program.
+
+ dash/valgrind.supp:  Suppresses valgrind memory leaks.
+
+ libsrc/common.h: Includes header files that are common to all source
+ 				  files in the directory
+ 
+ libsrc/List.h:  Defines the List class, which is a circular,
+ 				 doubly-linked list.  In this program, it is
+				 used to hold background processes.
+
+ libsrc/List.c:  Implementation of definition contained in List.h.
+
+ libsrc/Makefile: Used to build and clean the libsrc directory.
+
+ libsrc/Node.h:  Defines the Node class which holds a generic void* object.
+
+ libsrc/Node.c:  Implementation of definition contained in Node.h.
+
+BUILDING AND RUNNING:
+
+ To build the program, enter the command 'make' from the
+ top-level directory.  After everything has been compiled and linked,
+ enter the command './mydash' and the program will begin to execute. 
+
+PROGRAM DESIGN:
+
+ The program is treated by the readline library like a file, with the
+ user continuously able to give system commands until they decide to
+ exit.  When a user enters a command, it is passed to a Command pointer
+ which breaks it down into tokens.  Next, this command is passed to execvp,
+ and the command is executed.  If the '&' is at the end of the command, 
+ the program will run in the background, and a Job pointer will be added
+ to the Linked List. 
+
+TESTING:
+
+ To test my program I performed the following tests:
+
+ ls
+ ls -a
+ gedit
+ gedit &
+ cd ..
+ cd .
+ cd
+ touch file
+ rm file
+ cp file ../
+ rm ../file
+ various man pages
+ called ./mydash from within the dash
+ ssh into onyx
+ jobs
+ tab completion
+ empty commands
+ EOF
+ exit
+ setting the prompt variable
+ show svn global revision number
+ valgrind
+
+DISCUSSION:
+ 
+ I was not able to implement the functionality that would allow a user
+ to place a '&' as the last character even without a space before it.
+ Also, I was not able to implement the feature that prints the jobs
+ that have been completed since the last time the user pressed RETURN.
+
+ I did learn a great deal about how execvp works.  Also, I was able to
+ think much more like a C programmer than I ever have before.  An example
+ is my growing comfort with the use of pointers, and function pointers.
+  
+ What parts of the project did you find challenging? Is there anything
+ that finally "clicked" for you in the process of working on this project? 
