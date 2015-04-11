@@ -54,7 +54,8 @@ Parse Tree:
 Ambiguity:
 \\\indent\indent
 This grammar is unambiguous.  Since the non-terminal is located
-\\\indent\indent in the middle of the production, there is only one location for recursion.\\
+\\\indent\indent
+in the middle of the production, there is only one location for recursion.\\
 
 \\\indent
 Description:
@@ -63,12 +64,65 @@ This grammar generates the language which contains all strings of
 \\\indent\indent
 one or more 0s follow by the same number of 1s.\\
 
-
+\newpage
 \\\indent \textbf{b.}\\
+
+
+\\\indent 
+Leftmost Derivation:
+\\\indent\indent
+\textit{S}
+$\Rightarrow$ + \textit{S S}
+$\Rightarrow$ + * \textit{S S S}
+$\Rightarrow$ + * \textit{a S S}
+$\Rightarrow$ + * \textit{a a S}
+$\Rightarrow$ + * \textit{a a a}\\
+\\\indent
+Rightmost Derivation:
+\\\indent\indent
+\textit{S}
+$\Rightarrow$ + \textit{S S}
+$\Rightarrow$ + \textit{S a}
+$\Rightarrow$ + * \textit{S S a}
+$\Rightarrow$ + * \textit{S a a}
+$\Rightarrow$ + * \textit{a a a}\\
+\\
+\\\indent
+Parse Tree:
+\\\indent\indent
+\includegraphics[scale=0.5]{4_2_2_b1.png}\\
+
+\\\indent
+Ambiguity:
+\\\indent\indent
+This grammar is unambiguous.  The arithmetic operations control the
+\\\indent\indent
+growth of the tree, and only allow for a single parse tree for a given
+\\\indent\indent
+string.\\
+
+\\\indent
+Description:
+\\\indent\indent
+This grammar generates the language which contains all strings
+\\\indent\indent
+which use prefix notation for addition and multiplication on two
+\\\indent\indent
+or more values, represented by \textit{a}.\\
+
+\newpage
 \\\indent \textbf{c.}\\
+
+\newpage
 \\\indent \textbf{d.}\\
+
+\newpage
 \\\indent \textbf{e.}\\
+
+\newpage
 \\\indent \textbf{f.}\\
+
+\newpage
 \\\indent \textbf{g.}\\
 
 % Problem 4.3.3

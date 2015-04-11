@@ -1,0 +1,33 @@
+digraph _4_2_2_b1
+{
+	node [shape="plaintext"];
+	edge [arrowhead=none];
+	
+	p0 [label="+"];
+	m0 [label="*"];
+
+	S0 [label="S"];
+	S1 [label="S"];
+	S2 [label="S"];
+	
+	a0 [label="a"];
+
+	S3 [label="S"];
+	S4 [label="S"];
+
+	a1 [label="a"];
+	a2 [label="a"];
+
+	S0 -> p0;
+	S0 -> S1;
+	S0 -> S3;
+
+	S3 -> a2;
+
+	S1 -> m0;
+	S1 -> S2;
+	S1 -> S4;
+	
+	S2 -> a0;
+	S4 -> a1;
+}

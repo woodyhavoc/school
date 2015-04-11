@@ -1,5 +1,6 @@
 digraph _4_2_2_a1
 {
+	node [shape="plaintext"];
 	edge [arrowhead=none];
 
 	zero0 [label="0"];
