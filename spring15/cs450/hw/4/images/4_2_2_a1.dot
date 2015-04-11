@@ -1,0 +1,27 @@
+digraph _4_2_2_a1
+{
+	edge [arrowhead=none];
+
+	zero0 [label="0"];
+	zero1 [label="0"];
+	zero2 [label="0"];
+	
+	S0 [label="S"];
+	S1 [label="S"];
+	S2 [label="S"];
+
+	one0 [label="1"];
+	one1 [label="1"];
+	one2 [label="1"];
+
+	S0 -> zero0;
+	S0 -> S1;
+	S0 -> one0;
+
+	S1 -> zero1;
+	S1 -> S2;
+	S1 -> one1;
+
+	S2 -> zero2;
+	S2 -> one2;
+}

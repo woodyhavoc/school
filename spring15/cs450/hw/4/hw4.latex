@@ -1,0 +1,110 @@
+% Document class
+\documentclass{article}
+
+% Packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{mathtools}
+
+% Graphics Path
+\graphicspath{ '{images/} }
+
+% Page Styles
+\pagestyle{fancy}
+
+% Custom Commands
+\newcommand{\ul}{\underline}
+
+% Header Info
+\fancyhf{}
+\lhead{CS450}
+\chead{HW4}
+\rhead{Aaron Woods}
+\rfoot{Page \thepage}
+
+% Begin Document
+\begin{document}
+
+% Problem 4.2.2
+\noindent \textbf{4.2.2}\\
+
+\\\indent \textbf{a.}\\
+
+\\\indent 
+Leftmost Derivation:
+\\\indent\indent
+\textit{S} $\Rightarrow$ 0 \textit{S} 1
+$\Rightarrow$ 0 0 \textit{S} 1 1
+$\Rightarrow$ 0 0 0 1 1 1\\
+\\\indent
+Rightmost Derivation:
+\\\indent\indent
+Same as Leftmost Derivation.
+\\
+\\\indent
+Parse Tree:
+\\\indent\indent
+\includegraphics[scale=0.5]{4_2_2_a1.png}\\
+
+\\\indent
+Ambiguity:
+\\\indent\indent
+This grammar is unambiguous.  Since the non-terminal is located
+\\\indent\indent in the middle of the production, there is only one location for recursion.\\
+
+\\\indent
+Description:
+\\\indent\indent
+This grammar generates the language which contains all strings of
+\\\indent\indent
+one or more 0s follow by the same number of 1s.\\
+
+
+\\\indent \textbf{b.}\\
+\\\indent \textbf{c.}\\
+\\\indent \textbf{d.}\\
+\\\indent \textbf{e.}\\
+\\\indent \textbf{f.}\\
+\\\indent \textbf{g.}\\
+
+% Problem 4.3.3
+\newpage
+\noindent \textbf{4.3.3}\\
+\\
+
+% Problem 4.4.1
+\newpage
+\noindent \textbf{4.4.1}\\
+\\
+
+% Problem 4.4.3
+\newpage
+\noindent \textbf{4.4.3}\\
+\\
+
+% Problem 4.4.4
+\newpage
+\noindent \textbf{4.4.4}\\
+\\
+
+% Problem 4.6.2
+\newpage
+\noindent \textbf{4.6.2}\\
+\\
+
+% Problem 4.6.3
+\newpage
+\noindent \textbf{4.6.3}\\
+\\
+
+% Problem 4.6.4
+\newpage
+\noindent \textbf{4.6.4}\\
+\\
+
+% End Document
+\end{document}
