@@ -1,0 +1,66 @@
+digraph g
+{
+	node [shape="plaintext"];
+	edge [arrowhead=none];
+
+	s0 -> s1;
+	s0 -> op0;
+	s0 -> s2;
+	s0 -> cp0;
+	s0 -> s3;
+
+	s1 -> ep0;
+	s3 -> ep1;
+
+	s2 -> s4;
+	s2 -> op1;
+	s2 -> s5;
+	s2 -> cp1;
+	s2 -> s6;
+
+	s5 -> ep2;
+	s6 -> ep3;
+
+	s4 -> s7;
+	s4 -> op2;
+	s4 -> s8;
+	s4 -> cp2;
+	s4 -> s9;
+
+	s7 -> ep4;
+	s8 -> ep5;
+	s9 -> ep6;
+
+	s0 [label="S"];
+	s1 [label="S"];
+	s2 [label="S"];
+	s3 [label="S"];
+
+	op0 [label="("];
+	cp0 [label=")"];
+
+	ep0 [label="&epsilon;"];
+	ep1 [label="&epsilon;"];
+
+	s4 [label="S"];
+	s5 [label="S"];
+	s6 [label="S"];
+
+	op1 [label="("];
+	cp1 [label=")"];
+
+	ep2 [label="&epsilon;"];
+	ep3 [label="&epsilon;"];
+
+	s7 [label="S"];
+	s8 [label="S"];
+	s9 [label="S"];
+
+	op2 [label="("];
+	cp2 [label=")"];
+
+	ep4 [label="&epsilon;"];
+	ep5 [label="&epsilon;"];
+	ep6 [label="&epsilon;"];
+
+}

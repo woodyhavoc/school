@@ -113,6 +113,76 @@ or more values, represented by \textit{a}.\\
 \newpage
 \\\indent \textbf{c.}\\
 
+\\\indent
+Leftmost Derivation:
+
+\\\indent\indent
+\begin{tabular}{c  c  l}
+\textit{S} 	&	$\Rightarrow$	&	\textit{S} ( \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{S} ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{S} ( \textit{S} ) \textit{S} ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( \textit{S} ) \textit{S} ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) \textit{S} ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) ( ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) ( ) ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) ( ) )\\
+\end{tabular}\\
+
+\\\indent
+Rightmost Derivation:
+
+\\\indent\indent
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	\textit{S} ( \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	\textit{S} ( \textit{S} )\\
+			&	$\Rightarrow$	&	\textit{S} ( \textit{S} ( \textit{S} ) \textit{S} )\\
+			&	$\Rightarrow$	&	\textit{S} ( \textit{S} ( \textit{S} ) \textit{S} ( \textit{S} ) \textit{S} )\\
+			&	$\Rightarrow$	&	\textit{S} ( \textit{S} ( \textit{S} ) \textit{S} ( \textit{S} ) )\\
+			&	$\Rightarrow$	&	\textit{S} ( \textit{S} ( \textit{S} ) \textit{S} ( ) )\\
+			&	$\Rightarrow$	&	\textit{S} ( \textit{S} ( \textit{S} ) ( ) )\\
+			&	$\Rightarrow$	&	\textit{S} ( \textit{S} ( ) ( ) )\\
+			&	$\Rightarrow$	&	\textit{S} ( ( ) ( ) )\\
+			&	$\Rightarrow$	&	( ( ) ( ) )\\
+
+
+\end{tabular}\\
+
+\\\indent
+Parse Tree:
+\\\indent\indent
+\includegraphics[scale=0.5]{4_2_2_c1.png}\\
+
+\\\indent
+Ambiguity:
+\\\indent\indent
+This grammar is ambiguous, as can be seen by this alternate 
+\\\indent\indent
+leftmost derivation:\\
+
+\\\indent\indent
+\begin{tabular}{c  c  l}
+\textit{S} 	&	$\Rightarrow$	&	\textit{S} ( \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{S} ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) \textit{S} ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) ( \textit{S} ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) ( ) \textit{S} ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) ( ) ) \textit{S}\\
+			&	$\Rightarrow$	&	( ( ) ( ) )\\
+\end{tabular}\\
+
+\\\indent
+Description:
+
+\\\indent\indent
+This grammar generates the language which contains all strings
+\\\indent\indent
+of matching open and closed parentheses.\\
+
 \newpage
 \\\indent \textbf{d.}\\
 
