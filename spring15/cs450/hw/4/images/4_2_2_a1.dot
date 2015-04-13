@@ -7,9 +7,9 @@ digraph _4_2_2_a1
 	zero1 [label="0"];
 	zero2 [label="0"];
 	
-	S0 [label="S"];
-	S1 [label="S"];
-	S2 [label="S"];
+	S0 [label=<<I>S</I>>];
+	S1 [label=<<I>S</I>>];
+	S2 [label=<<I>S</I>>];
 
 	one0 [label="1"];
 	one1 [label="1"];

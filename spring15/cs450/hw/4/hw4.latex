@@ -181,10 +181,66 @@ Description:
 \\\indent\indent
 This grammar generates the language which contains all strings
 \\\indent\indent
-of matching open and closed parentheses.\\
+of matching open and closed parentheses.
 
 \newpage
 \\\indent \textbf{d.}\\
+
+\\\indent
+Leftmost Derivation:
+
+\\\indent\indent
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	\textit{S S}\\
+			&	$\Rightarrow$	&	\textit{S} * \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{S} ) * \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{S} + \textit{S} ) * \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{a} + \textit{S} ) * \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{a} + \textit{a} ) * \textit{S}\\
+			&	$\Rightarrow$	&	( \textit{a} + \textit{a} ) * \textit{a}\\
+\end{tabular}\\
+
+\\\indent
+Rightmost Derivation:
+
+\\\indent\indent
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	\textit{S S}\\
+			&	$\Rightarrow$	&	\textit{S a}\\
+			&	$\Rightarrow$	&	\textit{S} * \textit{a}\\
+			&	$\Rightarrow$	&	( \textit{S} ) * \textit{a}\\
+			&	$\Rightarrow$	&	( \textit{S} + \textit{S} ) * \textit{a}\\
+			&	$\Rightarrow$	&	( \textit{S} + \textit{a} ) * \textit{a}\\
+			&	$\Rightarrow$	&	( \textit{a} + \textit{a} ) * \textit{a}\\
+\end{tabular}\\
+
+\\\indent
+Parse Tree:
+
+\\\indent\indent
+\includegraphics[scale=0.5]{4_2_2_d1.png}\\
+
+\\\indent
+Ambiguity:
+
+\\\indent\indent
+Based on the terminals that are associated with most of the
+\\\indent\indent
+productions, it appears that this grammar only allows a single
+\\\indent\indent
+parse tree to exist for any given string.  Therefore, it is
+\\\indent\indent
+unambiguous.\\
+
+\\\indent
+Description:
+
+\\\indent\indent
+This grammar generates the language which contains all strings
+\\\indent\indent
+of two values either added or multiplied, with or without 
+\\\indent\indent
+parentheses.
 
 \newpage
 \\\indent \textbf{e.}\\

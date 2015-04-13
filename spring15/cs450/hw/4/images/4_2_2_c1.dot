@@ -31,36 +31,36 @@ digraph g
 	s8 -> ep5;
 	s9 -> ep6;
 
-	s0 [label="S"];
-	s1 [label="S"];
-	s2 [label="S"];
-	s3 [label="S"];
+	s0 [label=<<I>S</I>>];
+	s1 [label=<<I>S</I>>];
+	s2 [label=<<I>S</I>>];
+	s3 [label=<<I>S</I>>];
 
 	op0 [label="("];
 	cp0 [label=")"];
 
-	ep0 [label="&epsilon;"];
-	ep1 [label="&epsilon;"];
+	ep0 [label=<<I>&epsilon;</I>>];
+	ep1 [label=<<I>&epsilon;</I>>];
 
-	s4 [label="S"];
-	s5 [label="S"];
-	s6 [label="S"];
+	s4 [label=<<I>S</I>>];
+	s5 [label=<<I>S</I>>];
+	s6 [label=<<I>S</I>>];
 
 	op1 [label="("];
 	cp1 [label=")"];
 
-	ep2 [label="&epsilon;"];
-	ep3 [label="&epsilon;"];
+	ep2 [label=<<I>&epsilon;</I>>];
+	ep3 [label=<<I>&epsilon;</I>>];
 
-	s7 [label="S"];
-	s8 [label="S"];
-	s9 [label="S"];
+	s7 [label=<<I>S</I>>];
+	s8 [label=<<I>S</I>>];
+	s9 [label=<<I>S</I>>];
 
 	op2 [label="("];
 	cp2 [label=")"];
 
-	ep4 [label="&epsilon;"];
-	ep5 [label="&epsilon;"];
-	ep6 [label="&epsilon;"];
+	ep4 [label=<<I>&epsilon;</I>>];
+	ep5 [label=<<I>&epsilon;</I>>];
+	ep6 [label=<<I>&epsilon;</I>>];
 
 }

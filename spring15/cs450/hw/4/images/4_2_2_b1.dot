@@ -6,17 +6,17 @@ digraph _4_2_2_b1
 	p0 [label="+"];
 	m0 [label="*"];
 
-	S0 [label="S"];
-	S1 [label="S"];
-	S2 [label="S"];
+	S0 [label=<<I>S</I>>];
+	S1 [label=<<I>S</I>>];
+	S2 [label=<<I>S</I>>];
 	
-	a0 [label="a"];
+	a0 [label=<<I>a</I>>];
 
-	S3 [label="S"];
-	S4 [label="S"];
+	S3 [label=<<I>S</I>>];
+	S4 [label=<<I>S</I>>];
 
-	a1 [label="a"];
-	a2 [label="a"];
+	a1 [label=<<I>a</I>>];
+	a2 [label=<<I>a</I>>];
 
 	S0 -> p0;
 	S0 -> S1;

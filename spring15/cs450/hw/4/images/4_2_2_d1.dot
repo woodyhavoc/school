@@ -1,0 +1,44 @@
+digraph g
+{
+	node [shape="plaintext"];
+	edge [arrowhead=none];
+
+	s0 -> s1;
+	s0 -> s2;
+
+	s1 -> s3;
+	s1 -> mul;
+
+	s2 -> a0;
+
+	s3 -> op;
+	s3 -> s4;
+	s3 -> cp;
+
+	s4 -> s5;
+	s4 -> plus;
+	s4 -> s6;
+
+	s5 -> a1;
+
+	s6 -> a2;
+
+	s0 [label=<<I>S</I>>];
+	s1 [label=<<I>S</I>>];
+	s2 [label=<<I>S</I>>];
+	s3 [label=<<I>S</I>>];
+	s4 [label=<<I>S</I>>];
+	s5 [label=<<I>S</I>>];
+	s6 [label=<<I>S</I>>];
+
+	mul [label="*"];
+
+	a0 [label=<<I>a</I>>];
+	a1 [label=<<I>a</I>>];
+	a2 [label=<<I>a</I>>];
+
+	op [label="("];
+	cp [label=")"];
+
+	plus [label="+"];
+}
