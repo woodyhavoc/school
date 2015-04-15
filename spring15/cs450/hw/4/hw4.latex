@@ -35,30 +35,30 @@
 \\\indent \textbf{a.}\\
 
 \\\indent 
-Leftmost Derivation:
+Leftmost Derivation:\\
 \\\indent\indent
 \textit{S} $\Rightarrow$ 0 \textit{S} 1
 $\Rightarrow$ 0 0 \textit{S} 1 1
 $\Rightarrow$ 0 0 0 1 1 1\\
 \\\indent
-Rightmost Derivation:
+Rightmost Derivation:\\
 \\\indent\indent
 Same as Leftmost Derivation.
 \\
 \\\indent
-Parse Tree:
+Parse Tree:\\
 \\\indent\indent
 \includegraphics[scale=0.5]{4_2_2_a1.png}\\
 
 \\\indent
-Ambiguity:
+Ambiguity:\\
 \\\indent\indent
 This grammar is unambiguous.  Since the non-terminal is located
 \\\indent\indent
 in the middle of the production, there is only one location for recursion.\\
 
 \\\indent
-Description:
+Description:\\
 \\\indent\indent
 This grammar generates the language which contains all strings of
 \\\indent\indent
@@ -69,7 +69,7 @@ one or more 0s follow by the same number of 1s.\\
 
 
 \\\indent 
-Leftmost Derivation:
+Leftmost Derivation:\\
 \\\indent\indent
 \textit{S}
 $\Rightarrow$ + \textit{S S}
@@ -78,7 +78,7 @@ $\Rightarrow$ + * \textit{a S S}
 $\Rightarrow$ + * \textit{a a S}
 $\Rightarrow$ + * \textit{a a a}\\
 \\\indent
-Rightmost Derivation:
+Rightmost Derivation:\\
 \\\indent\indent
 \textit{S}
 $\Rightarrow$ + \textit{S S}
@@ -88,12 +88,12 @@ $\Rightarrow$ + * \textit{S a a}
 $\Rightarrow$ + * \textit{a a a}\\
 \\
 \\\indent
-Parse Tree:
+Parse Tree:\\
 \\\indent\indent
 \includegraphics[scale=0.5]{4_2_2_b1.png}\\
 
 \\\indent
-Ambiguity:
+Ambiguity:\\
 \\\indent\indent
 This grammar is unambiguous.  The arithmetic operations control the
 \\\indent\indent
@@ -102,7 +102,7 @@ growth of the tree, and only allow for a single parse tree for a given
 string.\\
 
 \\\indent
-Description:
+Description:\\
 \\\indent\indent
 This grammar generates the language which contains all strings
 \\\indent\indent
@@ -114,7 +114,7 @@ or more values, represented by \textit{a}.\\
 \\\indent \textbf{c.}\\
 
 \\\indent
-Leftmost Derivation:
+Leftmost Derivation:\\
 
 \\\indent\indent
 \begin{tabular}{c  c  l}
@@ -131,7 +131,7 @@ Leftmost Derivation:
 \end{tabular}\\
 
 \\\indent
-Rightmost Derivation:
+Rightmost Derivation:\\
 
 \\\indent\indent
 \begin{tabular}{c c l}
@@ -149,13 +149,13 @@ Rightmost Derivation:
 
 \end{tabular}\\
 
-\\\indent
-Parse Tree:
+\\\indent\\
+Parse Tree:\\
 \\\indent\indent
-\includegraphics[scale=0.5]{4_2_2_c1.png}\\
+\includegraphics[scale=0.4]{4_2_2_c1.png}\\
 
 \\\indent
-Ambiguity:
+Ambiguity:\\
 \\\indent\indent
 This grammar is ambiguous, as can be seen by this alternate 
 \\\indent\indent
@@ -176,7 +176,7 @@ leftmost derivation:\\
 \end{tabular}\\
 
 \\\indent
-Description:
+Description:\\
 
 \\\indent\indent
 This grammar generates the language which contains all strings
@@ -187,7 +187,7 @@ of matching open and closed parentheses.
 \\\indent \textbf{d.}\\
 
 \\\indent
-Leftmost Derivation:
+Leftmost Derivation:\\
 
 \\\indent\indent
 \begin{tabular}{c c l}
@@ -201,7 +201,7 @@ Leftmost Derivation:
 \end{tabular}\\
 
 \\\indent
-Rightmost Derivation:
+Rightmost Derivation:\\
 
 \\\indent\indent
 \begin{tabular}{c c l}
@@ -215,13 +215,13 @@ Rightmost Derivation:
 \end{tabular}\\
 
 \\\indent
-Parse Tree:
+Parse Tree:\\
 
 \\\indent\indent
 \includegraphics[scale=0.5]{4_2_2_d1.png}\\
 
 \\\indent
-Ambiguity:
+Ambiguity:\\
 
 \\\indent\indent
 Based on the terminals that are associated with most of the
@@ -233,7 +233,7 @@ parse tree to exist for any given string.  Therefore, it is
 unambiguous.\\
 
 \\\indent
-Description:
+Description:\\
 
 \\\indent\indent
 This grammar generates the language which contains all strings
@@ -245,11 +245,99 @@ parentheses.
 \newpage
 \\\indent \textbf{e.}\\
 
+\\\indent
+Leftmost Derivation:\\
+
+\\\indent
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	( \textit{L} )\\
+			&	$\Rightarrow$	&	( \textit{L} , \textit{S} )\\
+			&	$\Rightarrow$	&	( \textit{L} , \textit{S} , \textit{S} )\\
+			&	$\Rightarrow$	&	( \textit{S} , \textit{S} , \textit{S} )\\
+			&	$\Rightarrow$	&	( ( \textit{L} ) , \textit{S} , \textit{S} )\\
+			&	$\Rightarrow$	&	( ( \textit{L} , \textit{S} ) , \textit{S} , \textit{S} )\\
+			&	$\Rightarrow$	&	( ( \textit{S} , \textit{S} ) , \textit{S} , \textit{S} )\\
+			&	$\Rightarrow$	&	( ( \textit{a} , \textit{S} ) , \textit{S} , \textit{S} )\\
+			&	$\Rightarrow$	&	( ( \textit{a} , \textit{a} ) , \textit{S} , \textit{S} )\\
+			&	$\Rightarrow$	&	( ( \textit{a} , \textit{a} ) , \textit{a} , \textit{S} )\\
+			&	$\Rightarrow$	&	( ( \textit{a} , \textit{a} ) , \textit{a} , \textit{a} )\\	
+\end{tabular}\\
+
+\\\indent
+Rightmost Derivation:\\
+\\\indent
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	( \textit{L} )\\
+			&	$\Rightarrow$	&	( \textit{L} , \textit{S} )\\
+			&	$\Rightarrow$	&	( \textit{L} , ( \textit{L} ) )\\
+			&	$\Rightarrow$	&	( \textit{L} , ( \textit{S} ) )\\
+			&	$\Rightarrow$	&	( \textit{L} , ( \textit{a} ) )\\
+			&	$\Rightarrow$	&	( \textit{L} , \textit{S} , ( \textit{a} ) )\\
+			&	$\Rightarrow$	&	( \textit{L} , \textit{a} , ( \textit{a} ) )\\
+			&	$\Rightarrow$	&	( \textit{S} , \textit{a} , ( \textit{a} ) )\\
+			&	$\Rightarrow$	&	( ( \textit{L} ) , \textit{a} , ( \textit{a} ) )\\
+			&	$\Rightarrow$	&	( ( \textit{L} , \textit{S} ) , \textit{a} , ( \textit{a} ) )\\
+			&	$\Rightarrow$	&	( ( \textit{L} , \textit{a} ) , \textit{a} , ( \textit{a} ) )\\
+			&	$\Rightarrow$	&	( ( \textit{S} , \textit{a} ) , \textit{a} , ( \textit{a} ) )\\
+			&	$\Rightarrow$	&	( ( \textit{a} , \textit{a} ) , \textit{a} , ( \textit{a} ) )\\	
+\end{tabular}\\
+\\\indent
+Parse Tree:\\
+\includegraphics[scale=0.4]{4_2_2_e1.png}\\
+\\\indent
+Ambiguity:\\
+\\\indent\indent
+There does not appear to be any ambiguity in this grammar\\
+\indent\indent
+because there is only one derivation from a production that does\\
+\indent\indent
+not contain a terminal value.  The only other production is derived\\
+\indent\indent
+from a nonterminal other than itself.\\
+\\\indent
+Description:\\
+\\\indent\indent
+This grammar describes the language that generates a comma separated\\
+\indent\indent
+list of values, either inside or outside of parentheses.  This includes\\
+\indent\indent
+nested parentheses.\\
 \newpage
 \\\indent \textbf{f.}\\
 
+\\\indent
+Leftmost Derivation:\\
+
+\\\indent
+Rightmost Derivation:\\
+
+\\\indent
+Parse Tree:\\
+
+\\\indent
+Ambiguity:\\
+
+\\\indent
+Description:\\
+
 \newpage
 \\\indent \textbf{g.}\\
+
+\\\indent
+Leftmost Derivation:\\
+
+\\\indent
+Rightmost Derivation:\\
+
+\\\indent
+Parse Tree:\\
+
+\\\indent
+Ambiguity:\\
+
+\\\indent
+Description:\\
+
 
 % Problem 4.3.3
 \newpage

@@ -1,0 +1,75 @@
+digraph g
+{
+	node [shape="plaintext"];
+	edge [arrowhead=none];
+
+	s0 -> op0;
+	s0 -> l0;
+	s0 -> cp0;
+
+	l0 -> l1;
+	l0 -> c0;
+	l0 -> s1;
+
+	l1 -> l2;
+	l1 -> c1;
+	l1 -> s2;
+
+	s1 -> op1;
+	s1 -> l3;
+	s1 -> cp1;
+
+	l2 -> s3;
+
+	s2 -> a0;
+
+	l3 -> s4;
+
+	s3 -> op2;
+	s3 -> l4;
+	s3 -> cp2;
+
+	s4 -> a1;
+
+	l4 -> l5;
+	l4 -> c2;
+	l4 -> s5;
+
+	l5 -> s6;
+
+	s5 -> a2;
+
+	s6 -> a3;
+
+	s0 [label=<<I>S</I>>];
+	s1 [label=<<I>S</I>>];
+	s2 [label=<<I>S</I>>];
+	s3 [label=<<I>S</I>>];
+	s4 [label=<<I>S</I>>];
+	s5 [label=<<I>S</I>>];
+	s6 [label=<<I>S</I>>];
+
+	l0 [label=<<I>L</I>>];
+	l1 [label=<<I>L</I>>];
+	l2 [label=<<I>L</I>>];
+	l3 [label=<<I>L</I>>];
+	l4 [label=<<I>L</I>>];
+	l5 [label=<<I>L</I>>];
+
+	op0 [label="("];
+	op1 [label="("];
+	op2 [label="("];
+
+	cp0 [label=")"];
+	cp1 [label=")"];
+	cp2 [label=")"];
+
+	c0 [label=","];
+	c1 [label=","];
+	c2 [label=","];
+
+	a0 [label=<<I>a</I>>];
+	a1 [label=<<I>a</I>>];
+	a2 [label=<<I>a</I>>];
+	a3 [label=<<I>a</I>>];
+}
