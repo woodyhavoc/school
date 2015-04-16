@@ -1,0 +1,30 @@
+digraph g
+{
+	node [shape="plaintext"];
+	edge [arrowhead=none];
+
+	be0 -> bt0;
+
+	bt0 -> bf0;
+
+	bf0 -> not;
+	bf0 -> bf1;
+
+	bf1 -> op;
+	bf1 -> be1;
+	bf1 -> cp;
+
+	be1 -> be2 -> bt2 -> bf2 -> true;
+	be1 -> or;
+	be1 -> bt1 -> bf3 -> false;
+
+	be0, be1, be2 [label=<<I>bexpr</I>>];
+	bt0, bt1, bt2 [label=<<I>bterm</I>>];
+	bf0, bf1, bf2, bf3 [label=<<I>bfactor</I>>];
+	not [label=<<B>not</B>>];
+	or [label=<<B>or</B>>];
+	true [label=<<B>true</B>>];
+	false [label=<<B>false</B>>];
+	op [label="("];
+	cp [label=")"];
+}

@@ -32,6 +32,7 @@
 % Problem 4.2.2
 \noindent \textbf{4.2.2}\\
 
+% 4.2.2.a
 \\\indent \textbf{a.}\\
 
 \\\indent 
@@ -65,6 +66,8 @@ This grammar generates the language which contains all strings of
 one or more 0s follow by the same number of 1s.\\
 
 \newpage
+
+% 4.2.2.b
 \\\indent \textbf{b.}\\
 
 
@@ -111,6 +114,8 @@ which use prefix notation for addition and multiplication on two
 or more values, represented by \textit{a}.\\
 
 \newpage
+
+% 4.2.2.c
 \\\indent \textbf{c.}\\
 
 \\\indent
@@ -184,6 +189,8 @@ This grammar generates the language which contains all strings
 of matching open and closed parentheses.
 
 \newpage
+
+% 4.2.2.d
 \\\indent \textbf{d.}\\
 
 \\\indent
@@ -243,6 +250,8 @@ of two values either added or multiplied, with or without
 parentheses.
 
 \newpage
+
+% 4.2.2.e
 \\\indent \textbf{e.}\\
 
 \\\indent
@@ -369,23 +378,62 @@ the strings of equal amounts of a's and b's, regardless of\\
 \indent\indent
 order.\\
 \newpage
+
+% 4.2.2.g
 \\\indent \textbf{g.}\\
 
 \\\indent
 Leftmost Derivation:\\
-
+\\\indent\indent
+\begin{tabular}{c c l}
+\textit{bexpr}	&	$\Rightarrow$	&	\textit{bterm}\\
+				&	$\Rightarrow$	&	\textit{bfactor}\\
+				&	$\Rightarrow$	&	\textbf{not} \textit{bfactor}\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bexpr} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bexpr} \textbf{or} \textit{bterm} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bterm} \textbf{or} \textit{bterm} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bfactor} \textbf{or} \textit{bterm} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textbf{true or} \textit{bterm} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textbf{true or} \textit{bfactor} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textbf{true of false} )\\
+\end{tabular}\\
 \\\indent
 Rightmost Derivation:\\
+\\\indent\indent
+\begin{tabular}{c c l}
+\textit{bexpr}	&	$\Rightarrow$	&	\textit{bterm}\\
+				&	$\Rightarrow$	&	\textit{bfactor}\\
+				&	$\Rightarrow$	&	\textbf{not} \textit{bfactor}\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bexpr} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bexpr} \textbf{or} \textit{bterm} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bexpr} \textbf{or} \textit{bfactor} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bexpr} \textbf{or false} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bterm} \textbf{or false} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textit{bfactor} \textbf{or false} )\\
+				&	$\Rightarrow$	&	\textbf{not} ( \textbf{true of false} )\\
+\end{tabular}\\
 
 \\\indent
 Parse Tree:\\
-
+\includegraphics[scale=0.5]{4_2_2_g1.png}\\
 \\\indent
 Ambiguity:\\
-
+\\\indent\indent
+This grammar appears to be unambiguous because each nonterminal\\
+\indent\indent
+only has a single production that contains left recursion, and that\\
+\indent\indent
+production also contains terminals.  Additionally, all of the productions\\
+\indent\indent
+contain other nonterminals, or terminals.\\
 \\\indent
 Description:\\
-
+\\\indent\indent
+This grammar generates the language which contains all strings of\\
+\indent\indent
+boolean expressions using the terminals: \textbf{not, or, and, true, false}.\\
+\indent\indent
+This includes nested boolean expressions.\\
 
 % Problem 4.3.3
 \newpage
