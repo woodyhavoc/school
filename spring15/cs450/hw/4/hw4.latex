@@ -303,23 +303,71 @@ list of values, either inside or outside of parentheses.  This includes\\
 \indent\indent
 nested parentheses.\\
 \newpage
+
+% 4.2.2.f
 \\\indent \textbf{f.}\\
 
 \\\indent
 Leftmost Derivation:\\
 
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	\textit{a S b S}\\
+			&	$\Rightarrow$	&	\textit{a a S b S b S}\\
+			&	$\Rightarrow$	&	\textit{a a b S b S}\\
+			&	$\Rightarrow$	&	\textit{a a b b S}\\
+			&	$\Rightarrow$	&	\textit{a a b b a S b S}\\
+			&	$\Rightarrow$	&	\textit{a a b b a b S}\\
+			&	$\Rightarrow$	&	\textit{a a b b a b}\\
+\end{tabular}\\
+
 \\\indent
 Rightmost Derivation:\\
 
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	\textit{a S b S}\\
+			&	$\Rightarrow$	&	\textit{a S b a S b S}\\
+			&	$\Rightarrow$	&	\textit{a S b a S b}\\
+			&	$\Rightarrow$	&	\textit{a S b a b}\\
+			&	$\Rightarrow$	&	\textit{a a S b S b a b}\\
+			&	$\Rightarrow$	&	\textit{a a S b b a b}\\
+			&	$\Rightarrow$	&	\textit{a a b b a b}\\
+\end{tabular}\\
+
 \\\indent
 Parse Tree:\\
-
+\includegraphics[scale=0.5]{4_2_2_f1.png}\\
 \\\indent
 Ambiguity:\\
-
+\\\indent\indent
+This grammar is ambiguous.  Consider the derivations for the\\
+\indent\indent
+following string: \textit{a b a b}\\
+\\\indent\indent
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	\textit{a S b S}\\
+			&	$\Rightarrow$	&	\textit{a b S a S b S}\\
+			&	$\Rightarrow$	&	\textit{a b a S b S}\\
+			&	$\Rightarrow$	&	\textit{a b a b S}\\
+			&	$\Rightarrow$	&	\textit{a b a b}\\
+\end{tabular}\\
+\indent\indent
+and\\
+\\\indent\indent
+\begin{tabular}{c c l}
+\textit{S}	&	$\Rightarrow$	&	\textit{a S b S}\\
+			&	$\Rightarrow$	&	\textit{a b S}\\
+			&	$\Rightarrow$	&	\textit{a b a S b S}\\
+			&	$\Rightarrow$	&	\textit{a b a b S}\\
+			&	$\Rightarrow$	&	\textit{a b a b}\\
+\end{tabular}\\
 \\\indent
 Description:\\
-
+\\\indent\indent
+This grammar generates the language which contains all\\
+\indent\indent
+the strings of equal amounts of a's and b's, regardless of\\
+\indent\indent
+order.\\
 \newpage
 \\\indent \textbf{g.}\\
 
