@@ -439,7 +439,19 @@ This includes nested boolean expressions.\\
 \newpage
 \noindent \textbf{4.3.3}\\
 \\
+\indent
+String:\\
+\indent
+\textbf{if} \textit{expr} \textbf{then if} \textit{expr} \textbf{then other else if}
+\textit{expr} \textbf{then other else other}\\
 
+\\\indent
+Parse Tree 1:\\
+\indent
+\includegraphics[scale=0.35]{4_3_3_1.png}\\
+\\\indent
+Parse Tree 2:\\
+\includegraphics[scale=0.35]{4_3_3_2.png}\\
 % Problem 4.4.1
 \newpage
 \noindent \textbf{4.4.1}\\

@@ -1,0 +1,44 @@
+digraph g
+{
+	node [shape="plaintext"];
+	edge [arrowhead=none];
+
+	stmt0 -> mstmt0;
+
+	mstmt0 -> if0;
+	mstmt0 -> expr0;
+	mstmt0 -> then0;
+	mstmt0 -> mstmt1;
+	mstmt0 -> else0;
+	mstmt0 -> stmt1;
+
+	mstmt1 -> if1;
+	mstmt1 -> expr1;
+	mstmt1 -> then1;
+	mstmt1 -> mstmt2;
+	mstmt1 -> else1;
+	mstmt1 -> stmt2;
+
+	stmt1 -> mstmt3;
+
+	mstmt2 -> other0;
+
+	stmt2 -> if2;
+	stmt2 -> expr2;
+	stmt2 -> then2;
+	stmt2 -> stmt3;
+
+	mstmt3 -> other1;
+
+	stmt3 -> mstmt4;
+
+	mstmt4 -> other2;
+
+	stmt0, stmt1, stmt2, stmt3 [label=<<I>stmt</I>>];
+	mstmt0, mstmt1, mstmt2, mstmt3, mstmt4 [label=<<I>matchedStmt</I>>];
+	if0, if1, if2 [label=<<B>if</B>>];
+	expr0, expr1, expr2 [label=<<I>expr</I>>];
+	then0, then1, then2 [label=<<B>then</B>>];
+	else0, else1 [label=<<B>else</B>>];
+	other0, other1, other2 [label=<<B>other</B>>];
+}
