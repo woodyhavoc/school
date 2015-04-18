@@ -1,0 +1,23 @@
+Num dims: 1
+
+# program begin execution
+	push	$start
+	jmp
+$display:	0
+$start:
+	push	$display
+	0
+	add
+	push	$sp
+	ld
+	st
+	push	$display
+	0
+	add
+	push	$sp
+	ld
+	st
+
+# program termination
+	stop
+	end

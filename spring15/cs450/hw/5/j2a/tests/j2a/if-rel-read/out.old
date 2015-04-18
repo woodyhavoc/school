@@ -1,0 +1,61 @@
+
+# program begin execution
+	push	$start
+	jmp
+$display:	0
+		0
+$start:
+	push	$display
+	0
+	add
+	push	$sp
+	ld
+	st
+
+# generating code for < operator
+	sub
+	push	$label0
+	jn
+	push	$label1
+	jmp
+
+$label0:
+	push	1
+	push	$label2
+	jmp
+
+$label1:
+	push	0
+	push	$label2
+	jmp
+
+$label2:
+
+# generating code for if statement
+	push	$label3
+	jz
+	push	$display
+	0
+	add
+	push	$sp
+	ld
+	st
+	rd
+	push	$display
+	0
+	add
+	push	$sp
+	ld
+	st
+
+$label3:
+	push	$display
+	0
+	add
+	push	$sp
+	ld
+	st
+
+# program termination
+	stop
+	end

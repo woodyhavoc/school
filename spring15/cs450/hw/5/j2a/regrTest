@@ -1,0 +1,208 @@
+#!/bin/bash
+
+#############
+# Variables #
+#############
+
+# Variable used to determine if a program name
+# was passed as a parameter to the script
+prgParam=0
+
+# Error flag and exit value
+ERR=0
+
+# Original Directory that script is executed from
+orgDir="$PWD"
+
+# Input Files
+inNew="in.new"
+inOld="in.old"
+
+# Output Files
+outNew="out.new"
+outOld="out.old"
+
+# Error Files
+errNew="err.new"
+errOld="err.old"
+
+# Program Name
+prgNm="$orgDir/j2a"
+
+# Test Directories
+testj2a="$orgDir/tests/j2a"
+testasm="$orgDir/tests/asm"
+testDir=$testj2a
+
+# Test Name
+testNm="${orgDir##*/}"
+
+# Used to determine existence of a file
+fileExist=1
+
+#############
+# Functions #
+#############
+
+#################################################
+# cat the content of the input file $2 and pipe
+# it to the stdin of the program.  The stdout
+# and stderr from the program are redirected
+# to output and error files respectively.
+# 
+# Parameters:
+# 
+# $1 - directory of the input/output/error files
+# $2 - input file
+# $3 - error file
+# $4 - output file
+#################################################
+function runTest()
+{
+	cat "$1/$2" - | "$prgNm" 2> "$1/$3" > "$1/$4"
+}
+
+#################################################
+# cat the content of the input file $2 and pipe
+# it to the stdin of the program.  The stdout
+# and stderr from the program are redirected
+# to output and error files respectively.
+# 
+# Parameters:
+# 
+# $1 - directory of the input/output/error files
+# $2 - input file
+# $3 - error file
+# $4 - output file
+#################################################
+function runTestj2a()
+{
+	"$prgNm" < "$1/$2" 2> "$1/$3" > "$1/$4"
+	
+	if [ ! -f "$1/$inOld" ]; then
+		cp "$1/$inNew" "$1/$inOld"
+	fi
+	
+	if [ ! -f "$1/$outOld" ]; then
+		cp "$1/$outNew" "$1/$outOld"
+	fi
+	
+	if [ ! -f "$1/$errOld" ]; then
+		cp "$1/$errNew" "$1/$errOld"
+	fi
+	
+	if [ ! -d "$testasm/$testNm" ]; then
+		mkdir "$testasm/$testNm"
+	fi
+
+	cp "$1/$4" "$testasm/$testNm/$inNew"
+}
+
+#################################################
+# diff the contents of two files.  If there is a
+# difference between the two files, the ERR
+# variable will be set to 1.
+# 
+# Parameters:
+#
+# $1 - directory of the files to diff
+# $2 - first file to diff
+# $3 - second file to diff
+#################################################
+function runCmp()
+{
+	cmp -s "$1/$2" "$1/$3" > /dev/null
+	
+	if [ $? -ne 0 ] ; then
+		printf "%s and %s in %s are different.\n" "$2" "$3" "$1"
+		let ERR=1
+	fi
+}
+
+#################################################
+# Loops through all of the arguments given to it
+# and checks if the files exist.  If not, the
+# variable $fileExist is set to 0, and the loop
+# is broken out of.
+#
+# Parameters:
+#
+# $@ the names of the files to be checked
+#################################################
+function fileExists()
+{
+	let fileExist=1
+
+	for file in $@ ; do
+		if [ ! -f $file ]; then
+			echo "File: $file does not exist"
+			let ERR=1			
+			let fileExist=0
+		fi
+	done
+}
+
+############
+# Test Loop #
+#############
+function runj2a()
+{
+	prgNm="$orgDir/j2a"
+	
+	for t in $testj2a/* ; do
+		
+		testNm="${t##*/}"
+		
+		# diff input files
+		runCmp $t $inNew $inOld
+
+		# run the test with the new input, output, and error files
+		runTestj2a $t $inNew $errNew $outNew
+
+		# diff output files
+		runCmp $t $outNew $outOld
+
+		# diff error files
+		runCmp $t $errNew $errOld
+	done
+}
+
+function runasm()
+{
+	prgNm="$orgDir/asm"
+	
+	for t in $testasm/* ; do
+		
+		# Check if the input files and the old output file exist
+		fileExists "$t/$inNew" "$t/$inOld" "$t/$outOld" "$t/$errOld"
+	
+		# If any of the files checked above do not exist,
+		# the script will continue the loop from the top, skipping
+		# the test.
+		if [ $fileExist -eq 0 ]; then
+			continue
+		fi
+
+		# diff input files
+		runCmp $t $inNew $inOld
+
+		# run the test with the new input, output, and error files
+		runTest $t $inNew $errNew $outNew
+
+		# diff output files
+		runCmp $t $outNew $outOld
+
+		# diff error files
+		runCmp $t $errNew $errOld
+	done
+}
+
+make
+
+runj2a
+testDir=$testasm
+#runasm
+
+make clean
+
+exit $ERR

@@ -1,0 +1,51 @@
+%struct-type
+%compare-strncmp
+%includes
+%{
+#include "tokenentry.h"
+%}
+struct TokenEntry
+%%
+##########
+# Keywords
+##########
+break,TOK_BREAK
+while,TOK_WHILE
+if,TOK_IF
+else,TOK_ELSE
+do,TOK_DO
+read,TOK_READ
+write,TOK_WRITE
+true,TOK_TRUE
+false,TOK_FALSE
+int,TOK_INT
+float,TOK_FLOAT
+##########
+# Symbols
+##########
+*
++
+-
+;
+{
+}
+[
+]
+(
+)
+!,0,2
+=,0,2
+<,0,2
+>,0,2
+/,0,2
+&,TOK_ERROR,2
+|,TOK_ERROR,2
+<=,TOK_LTE
+>=,TOK_GTE
+&&,TOK_AND
+||,TOK_OR
+==,TOK_EQ
+!=,TOK_NE
+//,0,0,Past,""
+/*,0,0,Past,"*/"
+/**,0,0,Past,"*/"

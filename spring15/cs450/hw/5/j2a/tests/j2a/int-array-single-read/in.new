@@ -1,0 +1,9 @@
+{
+	int [5] i;
+
+	read i[0];
+	read i[1];
+	read i[2];
+	read i[3];
+	read i[4];
+}
