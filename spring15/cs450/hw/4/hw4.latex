@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{latexsym}
 \usepackage{mathtools}
+\usepackage{multirow}
 
 % Graphics Path
 \graphicspath{ '{images/} }
@@ -452,10 +453,52 @@ Parse Tree 1:\\
 \\\indent
 Parse Tree 2:\\
 \includegraphics[scale=0.35]{4_3_3_2.png}\\
+
+
+
 % Problem 4.4.1
 \newpage
 \noindent \textbf{4.4.1}\\
 \\
+\indent
+Grammar after elimination of left recursion:\\
+\\\indent\indent\begin{tabular}{c c l}
+\textit{S}			&	$\rightarrow$	&	( \textit{L} )\\
+					&	$\vert$			&	\textit{a}\\
+\textit{L}			&	$\rightarrow$	&	\textit{a L$'$}\\
+					&	$\vert$			&	( \textit{L} ) \textit{L$'$}\\
+\textit{L$'$}		&	$\rightarrow$	&	, ( \textit{L} ) \textit{L$'$}\\
+					&	$\rightarrow$	&	, \textit{a L$'$}\\
+					&	$\rightarrow$	&	$\epsilon$\\
+\end{tabular}\\
+\\\indent
+\textsc{First:}\\
+\\\indent\indent
+\begin{tabular}{c c l}
+\textsc{First}(\textit{S})		&	$\rightarrow$	&	\{ ( , \textit{a} \}\\
+\textsc{First}(\textit{L})		&	$\rightarrow$	&	\{ \textit{a} , ( \}\\
+\textsc{First}(\textit{L$'$})	&	$\rightarrow$	&	\{ , , $\epsilon$ \}\\
+\end{tabular}\\
+
+\\\indent
+\textsc{Follow:}\\
+\\\indent\indent
+\begin{tabular}{c c l}
+\textsc{Follow}(\textit{S})		&	$\rightarrow$	&	\{ \$ \}\\
+\textsc{Follow}(\textit{L})		&	$\rightarrow$	&	\{ ) \}\\
+\textsc{Follow}(\textit{L$'$})	&	$\rightarrow$	&	\{ ) \}\\
+\end{tabular}\\
+\\\indent
+Parsing Table:\\
+\begin{tabular}{c | c}
+\hhline\\
+\textsc{Non-terminal}	&	\begin{tabular} \textsc{Input Symbol} \end{tabular}\\	\hline
+						
+\end{tabular}
+
+
+
+
 
 % Problem 4.4.3
 \newpage
