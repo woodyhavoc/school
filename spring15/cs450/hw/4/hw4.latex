@@ -465,18 +465,16 @@ Grammar after elimination of left recursion:\\
 \\\indent\indent\begin{tabular}{c c l}
 \textit{S}			&	$\rightarrow$	&	( \textit{L} )\\
 					&	$\vert$			&	\textit{a}\\
-\textit{L}			&	$\rightarrow$	&	\textit{a L$'$}\\
-					&	$\vert$			&	( \textit{L} ) \textit{L$'$}\\
-\textit{L$'$}		&	$\rightarrow$	&	, ( \textit{L} ) \textit{L$'$}\\
-					&	$\rightarrow$	&	, \textit{a L$'$}\\
-					&	$\rightarrow$	&	$\epsilon$\\
+\textit{L}			&	$\rightarrow$	&	\textit{S L$'$}\\
+\textit{L$'$}		&	$\rightarrow$	&	, \textit{S L$'$}\\
+					&	$\vert$			&	$\epsilon$\\
 \end{tabular}\\
 \\\indent
 \textsc{First:}\\
 \\\indent\indent
 \begin{tabular}{c c l}
 \textsc{First}(\textit{S})		&	$\rightarrow$	&	\{ ( , \textit{a} \}\\
-\textsc{First}(\textit{L})		&	$\rightarrow$	&	\{ \textit{a} , ( \}\\
+\textsc{First}(\textit{L})		&	$\rightarrow$	&	\{ ( , \textit{a} \}\\
 \textsc{First}(\textit{L$'$})	&	$\rightarrow$	&	\{ , , $\epsilon$ \}\\
 \end{tabular}\\
 
@@ -484,17 +482,59 @@ Grammar after elimination of left recursion:\\
 \textsc{Follow:}\\
 \\\indent\indent
 \begin{tabular}{c c l}
-\textsc{Follow}(\textit{S})		&	$\rightarrow$	&	\{ \$ \}\\
+\textsc{Follow}(\textit{S})		&	$\rightarrow$	&	\{ \$ , , \}\\
 \textsc{Follow}(\textit{L})		&	$\rightarrow$	&	\{ ) \}\\
-\textsc{Follow}(\textit{L$'$})	&	$\rightarrow$	&	\{ ) \}\\
+\textsc{Follow}(\textit{L$'$})	&	$\rightarrow$	&	\{ $\epsilon$ , ) \}\\
 \end{tabular}\\
 \\\indent
 Parsing Table:\\
-\begin{tabular}{c | c}
-\hhline\\
-\textsc{Non-terminal}	&	\begin{tabular} \textsc{Input Symbol} \end{tabular}\\	\hline
-						
-\end{tabular}
+\\\indent\indent\begin{tabular}{c | c | c | c | c | c}
+\textsc{Non-terminal}	&	a											&	(											&	)	&	,	&	\$	\\ \hline
+\textit{S}				&	\textit{S} $\rightarrow$ a					&	\textit{S} $\rightarrow$ ( \textit{L} )		&		&		&		\\
+\textit{L}				&	\textit{L} $\rightarrow$ \textit{S L$'$}	&	\textit{L} $\rightarrow$ \textit{S L$'$}	&		&		&		\\
+\textit{L$'$}			&												&												& 	\textit{L$'$} $\rightarrow$ $\epsilon$	&	\textit{L$'$} $\rightarrow$ , \textit{S L$'$}	&	\textit{L$'$} $\rightarrow$ $\epsilon$	\\			
+\end{tabular}\\
+
+\\\indent
+Parse moves on string: (a,a)\\
+\\\indent\indent
+\begin{tabular}{l r r l}
+\hline
+\hline
+\textsc{Matched}	&	\textsc{Stack}				&	\textsc{Input}	&	\textsc{Action}											\\	\hline
+					&	\textit{S}\$				&	(a,a)\$			&															\\
+					&	(\textit{L})\$				&	(a,a)\$			&	output \textit{S} $\rightarrow$ (\textit{L})			\\
+(					&	\textit{L})\$				&	a,a)\$			&	match (													\\
+(					&	\textit{SL$'$})\$			&	a,a)\$			&	output \textit{L} $\rightarrow$ \textit{SL$'$}			\\
+(					&	a\textit{L$'$})\$			&	a,a)\$			&	output \textit{S} $\rightarrow$ a						\\
+(a					&	\textit{L$'$})\$			&	,a)\$			&	match a													\\
+(a					&	,\textit{SL$'$})\$			&	,a)\$			&	output \textit{L$'$} $\rightarrow$ ,\textit{SL$'$}		\\
+(a,					&	\textit{SL$'$})\$			&	a)\$			&	match ,													\\
+(a,					&	a\textit{L$'$})\$			&	a)\$			&	output \textit{S} $\rightarrow$ a						\\
+(a,a				&	\textit{L$'$})\$			&	)\$				&	match a													\\
+(a,a				&	)\$							&	)\$				&	output \textit{L$'$} $\rightarrow$ $\epsilon$			\\
+(a,a)				&	\$							&	\$				&	match )													\\	\hline						
+\end{tabular}\\
+
+
+\\\indent
+Parse moves on string: (a,(a,a))\\
+\\\indent\indent
+\begin{tabular}{l r r l}
+\hline
+\hline
+\textsc{Matched}	&	\textsc{Stack}	&	\textsc{Input}	&	\textsc{Action}\\ \hline
+\end{tabular}\\
+
+
+\\\indent
+Parse moves on string: (a,((a,a),(a,a)))\\
+\\\indent\indent
+\begin{tabular}{l r r l}
+\hline
+\hline
+\textsc{Matched}	&	\textsc{Stack}	&	\textsc{Input}	&	\textsc{Action}\\ \hline
+\end{tabular}\\
 
 
 
