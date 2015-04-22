@@ -496,7 +496,7 @@ Parsing Table:\\
 \end{tabular}\\
 
 \\\indent
-Parse moves on string: (a,a)\\
+\\Parse moves on string: (a,a)\\
 \\\indent\indent
 \begin{tabular}{l r r l}
 \hline
@@ -516,18 +516,39 @@ Parse moves on string: (a,a)\\
 (a,a)				&	\$							&	\$				&	match )													\\	\hline						
 \end{tabular}\\
 
-
-\\\indent
+\newpage
+\indent
 Parse moves on string: (a,(a,a))\\
 \\\indent\indent
 \begin{tabular}{l r r l}
 \hline
 \hline
-\textsc{Matched}	&	\textsc{Stack}	&	\textsc{Input}	&	\textsc{Action}\\ \hline
+\textsc{Matched}	&	\textsc{Stack}						&	\textsc{Input}	&	\textsc{Action}									\\	\hline
+					&	\textit{S}\$						&	(a,(a,a))\$		&													\\
+					&	(\textit{L})\$						&	(a,(a,a))\$		&	output \textit{S} $\rightarrow$ (\textit{L})	\\
+(					&	\textit{L})\$						&	a,(a,a))\$		&	match (											\\
+(					&	\textit{SL$'$})\$					&	a,(a,a))\$		&	output \textit{L} $\rightarrow$ \textit{SL$'$}	\\
+(					&	a\textit{L$'$})\$					&	a,(a,a))\$		&	output \textit{S} $\rightarrow$ a				\\
+(a					&	\textit{L$'$})\$					&	,(a,a))\$		&	match a											\\
+(a					&	,\textit{SL$'$})\$					&	,(a,a))\$		&	\textit{L$'$} $\rightarrow$ ,\textit{SL$'$}		\\
+(a,					&	\textit{SL$'$})\$					&	(a,a))\$		&	match ,											\\
+(a,					&	(\textit{L})\textit{L$'$})\$		&	(a,a))\$		&	\textit{S} $\rightarrow$ (\textit{L})			\\
+(a,(				&	\textit{L})\textit{L$'$})\$			&	a,a))\$			&	match (											\\
+(a,(				&	\textit{SL$'$})\textit{L$'$})\$		&	a,a))\$			&	\textit{L} $\rightarrow$ \textit{SL$'$}			\\
+(a,(				&	a\textit{L$'$})\textit{L$'$})\$		&	a,a))\$			&	\textit{S} $\rightarrow$ a						\\
+(a,(a				&	\textit{L$'$})\textit{L$'$})\$		&	,a))\$			&	match a											\\
+(a,(a				&	,\textit{SL$'$})\textit{L$'$})\$	&	,a))\$			&	\textit{L$'$} $\rightarrow$ \textit{SL$'$}		\\
+(a,(a,				&	\textit{SL$'$})\textit{L$'$})\$		&	a))\$			&	match ,											\\
+(a,(a,				&	a\textit{L$'$})\textit{L$'$})\$		&	a))\$			&	\textit{S} $\rightarrow$ a						\\
+(a,(a,a				&	\textit{L$'$})\textit{L$'$})\$		&	))\$			&	match a											\\
+(a,(a,a				&	)\textit{L$'$})\$					&	))\$			&	\textit{L$'$} $\rightarrow$ $\epsilon$			\\
+(a,(a,a)			&	\textit{L$'$})\$					&	)\$				&	match )											\\
+(a,(a,a)			&	)\$									&	)\$				&	\textit{L$'$} $\rightarrow$ $\epsilon$			\\
+(a,(a,a))			&	\$									&	\$				&	match )											\\	\hline
 \end{tabular}\\
 
-
-\\\indent
+\newpage
+\indent
 Parse moves on string: (a,((a,a),(a,a)))\\
 \\\indent\indent
 \begin{tabular}{l r r l}
