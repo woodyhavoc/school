@@ -463,16 +463,17 @@ Parse Tree 2:\\
 \indent
 Grammar after elimination of left recursion:\\
 \\\indent\indent\begin{tabular}{c c l}
-\textit{S}			&	$\rightarrow$	&	( \textit{L} )\\
-					&	$\vert$			&	\textit{a}\\
-\textit{L}			&	$\rightarrow$	&	\textit{S L$'$}\\
-\textit{L$'$}		&	$\rightarrow$	&	, \textit{S L$'$}\\
-					&	$\vert$			&	$\epsilon$\\
+\textit{S}			&	$\rightarrow$	&	( \textit{L} )				\\
+					&	$\vert$			&	\textit{a}					\\
+\textit{L}			&	$\rightarrow$	&	\textit{(\textit{L}) L$'$}	\\
+					&	$\vert$			&	\textit{a L$'$}				\\
+\textit{L$'$}		&	$\rightarrow$	&	, \textit{S L$'$}			\\
+					&	$\vert$			&	$\epsilon$					\\
 \end{tabular}\\
 \\\indent
 \textsc{First:}\\
 \\\indent\indent
-\begin{tabular}{c c l}
+\begin{tabular}{l c l}
 \textsc{First}(\textit{S})		&	$\rightarrow$	&	\{ ( , \textit{a} \}\\
 \textsc{First}(\textit{L})		&	$\rightarrow$	&	\{ ( , \textit{a} \}\\
 \textsc{First}(\textit{L$'$})	&	$\rightarrow$	&	\{ , , $\epsilon$ \}\\
@@ -481,7 +482,7 @@ Grammar after elimination of left recursion:\\
 \\\indent
 \textsc{Follow:}\\
 \\\indent\indent
-\begin{tabular}{c c l}
+\begin{tabular}{l c l}
 \textsc{Follow}(\textit{S})		&	$\rightarrow$	&	\{ \$ , , \}\\
 \textsc{Follow}(\textit{L})		&	$\rightarrow$	&	\{ ) \}\\
 \textsc{Follow}(\textit{L$'$})	&	$\rightarrow$	&	\{ $\epsilon$ , ) \}\\
@@ -489,10 +490,10 @@ Grammar after elimination of left recursion:\\
 \\\indent
 Parsing Table:\\
 \\\indent\indent\begin{tabular}{c | c | c | c | c | c}
-\textsc{Non-terminal}	&	a											&	(											&	)	&	,	&	\$	\\ \hline
-\textit{S}				&	\textit{S} $\rightarrow$ a					&	\textit{S} $\rightarrow$ ( \textit{L} )		&		&		&		\\
-\textit{L}				&	\textit{L} $\rightarrow$ \textit{S L$'$}	&	\textit{L} $\rightarrow$ \textit{S L$'$}	&		&		&		\\
-\textit{L$'$}			&												&												& 	\textit{L$'$} $\rightarrow$ $\epsilon$	&	\textit{L$'$} $\rightarrow$ , \textit{S L$'$}	&	\textit{L$'$} $\rightarrow$ $\epsilon$	\\			
+\textsc{Non-terminal}	&	a											&	(														&	)	&	,	&	\$	\\ \hline
+\textit{S}				&	\textit{S} $\rightarrow$ a					&	\textit{S} $\rightarrow$ ( \textit{L} )					&		&		&		\\
+\textit{L}				&	\textit{L} $\rightarrow$ \textit{a L$'$}	&	\textit{L} $\rightarrow$ \textit{( \textit{L} ) L$'$}	&		&		&		\\
+\textit{L$'$}			&												&															& 	\textit{L$'$} $\rightarrow$ $\epsilon$	&	\textit{L$'$} $\rightarrow$ , \textit{S L$'$}	&	\textit{L$'$} $\rightarrow$ $\epsilon$	\\			
 \end{tabular}\\
 
 \\\indent
@@ -505,8 +506,7 @@ Parsing Table:\\
 					&	\textit{S}\$				&	(a,a)\$			&															\\
 					&	(\textit{L})\$				&	(a,a)\$			&	output \textit{S} $\rightarrow$ (\textit{L})			\\
 (					&	\textit{L})\$				&	a,a)\$			&	match (													\\
-(					&	\textit{SL$'$})\$			&	a,a)\$			&	output \textit{L} $\rightarrow$ \textit{SL$'$}			\\
-(					&	a\textit{L$'$})\$			&	a,a)\$			&	output \textit{S} $\rightarrow$ a						\\
+(					&	a\textit{L$'$})\$			&	a,a)\$			&	output \textit{L} $\rightarrow$ \textit{aL$'$}						\\
 (a					&	\textit{L$'$})\$			&	,a)\$			&	match a													\\
 (a					&	,\textit{SL$'$})\$			&	,a)\$			&	output \textit{L$'$} $\rightarrow$ ,\textit{SL$'$}		\\
 (a,					&	\textit{SL$'$})\$			&	a)\$			&	match ,													\\
@@ -527,15 +527,13 @@ Parse moves on string: (a,(a,a))\\
 					&	\textit{S}\$						&	(a,(a,a))\$		&															\\
 					&	(\textit{L})\$						&	(a,(a,a))\$		&	output \textit{S} $\rightarrow$ (\textit{L})			\\
 (					&	\textit{L})\$						&	a,(a,a))\$		&	match (													\\
-(					&	\textit{SL$'$})\$					&	a,(a,a))\$		&	output \textit{L} $\rightarrow$ \textit{SL$'$}			\\
-(					&	a\textit{L$'$})\$					&	a,(a,a))\$		&	output \textit{S} $\rightarrow$ a						\\
+(					&	a\textit{L$'$})\$					&	a,(a,a))\$		&	output \textit{L} $\rightarrow$ \textit{aL$'$}						\\
 (a					&	\textit{L$'$})\$					&	,(a,a))\$		&	match a													\\
 (a					&	,\textit{SL$'$})\$					&	,(a,a))\$		&	output \textit{L$'$} $\rightarrow$ ,\textit{SL$'$}		\\
 (a,					&	\textit{SL$'$})\$					&	(a,a))\$		&	match ,													\\
 (a,					&	(\textit{L})\textit{L$'$})\$		&	(a,a))\$		&	output \textit{S} $\rightarrow$ (\textit{L})			\\
 (a,(				&	\textit{L})\textit{L$'$})\$			&	a,a))\$			&	match (													\\
-(a,(				&	\textit{SL$'$})\textit{L$'$})\$		&	a,a))\$			&	output \textit{L} $\rightarrow$ \textit{SL$'$}			\\
-(a,(				&	a\textit{L$'$})\textit{L$'$})\$		&	a,a))\$			&	output \textit{S} $\rightarrow$ a						\\
+(a,(				&	a\textit{L$'$})\textit{L$'$})\$		&	a,a))\$			&	output \textit{L} $\rightarrow$ \textit{aL$'$}						\\
 (a,(a				&	\textit{L$'$})\textit{L$'$})\$		&	,a))\$			&	match a													\\
 (a,(a				&	,\textit{SL$'$})\textit{L$'$})\$	&	,a))\$			&	output \textit{L$'$} $\rightarrow$ \textit{SL$'$}		\\
 (a,(a,				&	\textit{SL$'$})\textit{L$'$})\$		&	a))\$			&	match ,													\\
@@ -558,18 +556,15 @@ Parse moves on string: (a,((a,a),(a,a)))\\
 					&	\textit{S}\$										&	(a,((a,a),(a,a)))\$	&																			\\
 					&	(\textit{L})\$										&	(a,((a,a),(a,a)))\$	&	output \textit{S} $\rightarrow$ (\texit{L})								\\
 (					&	\textit{L})\$										&	a,((a,a),(a,a)))\$	&	match (																	\\
-(					&	\textit{SL$'$})\$									&	a,((a,a),(a,a)))\$	&	output \textit{L} $\rightarrow$ \textit{SL$'$}							\\
-(					&	a\textit{L$'$})\$									&	a,((a,a),(a,a)))\$	&	output \textit{S} $\rightarrow$ a										\\
+(					&	a\textit{L$'$})\$									&	a,((a,a),(a,a)))\$	&	output \textit{L} $\rightarrow$ \textit{aL$'$}										\\
 (a					&	\textit{L$'$})\$									&	,((a,a),(a,a)))\$	&	match a																	\\
 (a					&	,\textit{SL$'$})\$									&	,((a,a),(a,a)))\$	&	output \textit{L$'$} $\rightarrow$ ,\textit{SL$'$}						\\
 (a,					&	\textit{SL$'$})\$									&	((a,a),(a,a)))\$	&	match ,																	\\
 (a,					&	(\textit{L})\textit{L$'$})\$						&	((a,a),(a,a)))\$	&	output \textit{S} $\rightarrow$ (\textit{L})							\\
 (a,(				&	\textit{L})\textit{L$'$})\$							&	(a,a),(a,a)))\$		&	match (																	\\
-(a,(				&	\textit{SL$'$})\textit{L$'$})\$						&	(a,a),(a,a)))\$		&	output \textit{L} $\rightarrow$ \textit{SL$'$}							\\
-(a,(				&	(\textit{L})\textit{L$'$})\textit{L$'$})\$			&	(a,a),(a,a)))\$		&	output \textit{S} $\rightarrow$ (\textit{L})							\\
+(a,(				&	(\textit{L})\textit{L$'$})\textit{L$'$})\$			&	(a,a),(a,a)))\$		&	output \textit{L} $\rightarrow$ (\textit{L})\textit{L$'$}							\\
 (a,((				&	\textit{L})\textit{L$'$})\textit{L$'$})\$			&	a,a),(a,a)))\$		&	match (																	\\
-(a,((				&	\textit{SL$'$})\textit{L$'$})\textit{L$'$})\$		&	a,a),(a,a)))\$		&	output \textit{L} $\rightarrow$ \textit{SL$'$}							\\
-(a,((				&	a\textit{L$'$})\textit{L$'$})\textit{L$'$})\$		&	a,a),(a,a)))\$		&	output \textit{S} $\rightarrow$ a										\\
+(a,((				&	a\textit{L$'$})\textit{L$'$})\textit{L$'$})\$		&	a,a),(a,a)))\$		&	output \textit{L} $\rightarrow$ \textit{aL$'$}										\\
 (a,((a				&	\textit{L$'$})\textit{L$'$})\textit{L$'$})\$		&	,a),(a,a)))\$		&	match a																	\\
 (a,((a				&	,\textit{SL$'$'})\textit{L$'$})\textit{L$'$})\$		&	,a),(a,a)))\$		&	output \textit{L$'$} $\rightarrow$ ,\textit{SL$'$}						\\
 (a,((a,				&	\textit{SL$'$})\textit{L$'$})\textit{L$'$})\$		&	a),(a,a)))\$		&	match ,																	\\
@@ -581,10 +576,9 @@ Parse moves on string: (a,((a,a),(a,a)))\\
 (a,((a,a),			&	\textit{SL$'$})\textit{L$'$})\$						&	(a,a)))\$			&	match ,																	\\
 (a,((a,a),			&	(\textit{L})\textit{L$'$})\textit{L$'$})\$			&	(a,a)))\$			&	output \textit{S} $\rightarrow$ (\textit{L})							\\
 (a,((a,a),(			&	\textit{L})\textit{L$'$})\textit{L$'$})\$			&	a,a)))\$			&	match (																	\\
-(a,((a,a),(			&	\textit{SL$'$})\textit{L$'$})\textit{L$'$})\$		&	a,a)))\$			&	output \textit{L} $\rightarrow$ \textit{SL$'$}							\\
-(a,((a,a),(			&	a\textit{L$'$})\textit{L$'$})\textit{L$'$})\$		&	a,a)))\$			&	output \textit{S} $\rightarrow$ a										\\
+(a,((a,a),(			&	a\textit{L$'$})\textit{L$'$})\textit{L$'$})\$		&	a,a)))\$			&	output \textit{L} $\rightarrow$ \textit{aL$'$}										\\
 (a,((a,a),(a		&	\textit{L$'$})\textit{L$'$})\textit{L$'$})\$		&	,a)))\$				&	match a																	\\
-(a,((a,a),(a		&	,\textit{SL$'$})\textit{L$'$})\textit{L$'$})\$		&	,a)))\$				&	output \textit{L} $\rightarrow$ \textit{SL$'$}							\\
+(a,((a,a),(a		&	,\textit{SL$'$})\textit{L$'$})\textit{L$'$})\$		&	,a)))\$				&	output \textit{L$'$} $\rightarrow$ ,\textit{SL$'$}							\\
 (a,((a,a),(a,		&	\textit{SL$'$})\textit{L$'$})\textit{L$'$})\$		&	a)))\$				&	match ,																	\\
 (a,((a,a),(a,		&	a\textit{L$'$})\textit{L$'$})\textit{L$'$})\$		&	a)))\$				&	output \textit{S} $\rightarrow$ a										\\
 (a,((a,a),(a,a		&	\textit{L$'$})\textit{L$'$})\textit{L$'$})\$		&	)))\$				&	match a																	\\
@@ -596,19 +590,74 @@ Parse moves on string: (a,((a,a),(a,a)))\\
 (a,((a,a),(a,a)))	&	\$													&	\$					&	match )																	\\	\hline
 \end{tabular}\\
 
-
-
-
-
 % Problem 4.4.3
 \newpage
 \noindent \textbf{4.4.3}\\
-\\
-
+\\\indent
+\begin{tabular}{l c l}
+\textsc{First}(\textit{S})	&	$\rightarrow$	&	\{ \textit{a} \}	\\
+\textsc{Follow}(\textit{S})	&	$\rightarrow$	&	\{ \$, \textit{a} , + , * \}			\\
+\end{tabular}\\
 % Problem 4.4.4
 \newpage
 \noindent \textbf{4.4.4}\\
-\\
+
+\\\indent \textbf{a.}\\
+\\\indent\indent
+\begin{tabular}{l c l}
+\textsc{First}(\textit{S})	&	$\rightarrow$	&	\{ 0 \}	\\
+\textsc{Follow}(\textit{S})	&	$\rightarrow$	&	\{ \$ , 1 \}	\\
+\end{tabular}\\
+
+\\\indent \textbf{b.}
+\\\indent\indent
+\begin{tabular}{l c l}
+\textsc{First}(\textit{S})	&	$\rightarrow$	&	\{ + , * \}	\\
+\textsc{Follow}(\textit{S})	&	$\rightarrow$	&	\{ \$ , + , * , \textit{a} \} \\
+\end{tabular}\\
+
+\\\indent \textbf{c.}
+\\\indent\indent
+\begin{tabular}{l c l}
+\textsc{First}(\textit{S})	&	$\rightarrow$	&	\{ $\epsilon$ \}	\\
+\textsc{Follow}(\textit{S})	&	$\rightarrow$	&	\{ \$ , ( , ) \} \\
+\end{tabular}\\
+
+\\\indent \textbf{d.}
+\\\indent\indent
+\begin{tabular}{l c l}
+\textsc{First}(\textit{S})	&	$\rightarrow$	&	\{ ( , a \}	\\
+\textsc{Follow}(\textit{S})	&	$\rightarrow$	&	\{ \$ , + , ) , * \} \\
+\end{tabular}\\
+
+\\\indent \textbf{e.}
+\\\indent\indent
+\begin{tabular}{l c l}
+\textsc{First}(\textit{S})	&	$\rightarrow$	&	\{ ( , a \}	\\
+\textsc{First}(\textit{L})	&	$\rightarrow$	&	\{ a , , \} \\
+							&					&	\\
+\textsc{Follow}(\textit{S})	&	$\rightarrow$	&	\{ \$ , + , ) , * \} \\
+\textsc{Follow}(\textit{L})	&	$\rightarrow$	&	\{ \$ , ) , , \} \\
+\end{tabular}\\
+
+\\\indent \textbf{f.}
+\\\indent\indent
+\begin{tabular}{l c l}
+\textsc{First}(\textit{S})	&	$\rightarrow$	&	\{ a , b , $\epsilon$ \}	\\
+\textsc{Follow}(\textit{S})	&	$\rightarrow$	&	\{ \$ , a , b \} \\
+\end{tabular}\\
+
+\\\indent \textbf{g.}
+\\\indent\indent
+\begin{tabular}{l c l}
+\textsc{First}(\textit{bexpr})		&	$\rightarrow$	&	\{ \textbf{not} , \textbf{true} , \textbf{false} , ( \}	\\
+\textsc{First}(\textit{bterm})		&	$\rightarrow$	&	\{ \textbf{not} , \textbf{true} , \textbf{false} , ( \} \\
+\textsc{First}(\textit{bfactor})	&	$\rightarrow$	&	\{ \textbf{not} , \textbf{true} , \textbf{false} , ( \} \\
+									&					&	\\
+\textsc{Follow}(\textit{bexpr})		&	$\rightarrow$	&	\{ \$ , \textbf{or} , \textbf{and} , ) \} \\
+\textsc{Follow}(\textit{bterm})		&	$\rightarrow$	&	\{ \textbf{and} , ) , \textbf{or} \} \\
+\textsc{Follow}(\textit{bfactor})	&	$\rightarrow$	&	\{ ) , \textbf{or} , \textbf{and} \} \\
+\end{tabular}\\
 
 % Problem 4.6.2
 \newpage
