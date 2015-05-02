@@ -1,0 +1,174 @@
+%defines
+%debug
+%verbose
+
+%{
+#define YYERROR_VERBOSE 1
+
+extern Tree tree;
+extern int yylex(void);
+extern void yyerror(char *s);
+
+%}
+
+%expect 1
+
+%union {
+  TreeProg  	treeProgram;
+  TreeBlock    	treeBlock;
+  TreeDecls		treeDecls;
+  TreeDecl		treeDecl;
+  TreeType		treeType;
+  TreeBasic		treeBasic;
+  TreeStmts		treeStmts;
+  TreeStmt		treeStmt;
+  TreeLoc		treeLoc;
+  TreeBool		treeBool;
+  TreeJoin		treeJoin;
+  TreeEquality	treeEquality;
+  TreeRel		treeRel;
+  TreeExpr		treeExpr;
+  TreeTerm		treeTerm;
+  TreeUnary		treeUnary;
+  TreeFactor	treeFactor;
+  TreeId       	treeId;
+  TreeNum      	treeNum;
+  TreeReal     	treeReal;
+  TreeInt		treeInt;
+  TreeFloat		treeFloat;
+}
+
+%type <treeProgram>  	prog
+%type <treeBlock>    	block
+%type <treeDecls>		decls
+%type <treeDecl>		decl
+%type <treeType>		type
+%type <treeBasic>		basic
+%type <treeStmts>		stmts
+%type <treeStmt>		stmt
+%type <treeLoc>			loc
+%type <treeBool>		bool
+%type <treeJoin>		join
+%type <treeEquality>	equality
+%type <treeRel>			rel
+%type <treeExpr>		expr
+%type <treeTerm>		term
+%type <treeUnary>		unary
+%type <treeFactor>		factor
+
+%token TOK_BREAK 		"break"
+%token TOK_WHILE 		"while"
+%token TOK_AND			"&&"
+%token TOK_LTE			"<="
+%token TOK_OR			"||"
+%token TOK_IF			"if"
+%token TOK_ELSE			"else"
+%token TOK_DO			"do"
+%token TOK_READ			"read"
+%token TOK_WRITE		"write"
+%token TOK_EQ			"=="
+%token TOK_NE  			"!="
+%token TOK_GTE			">="
+
+%token <treeId>	  		TOK_ID
+%token <treeNum>  		TOK_NUM
+%token <treeReal> 		TOK_REAL
+%token <treeBlock>		TOK_BLOCK
+%token <treeDecls>		TOK_DECLS
+%token <treeDecl>		TOK_DECL
+%token <treeType>		TOK_TYPE
+%token <treeBasic>		TOK_BASIC
+%token <treeStmt>		TOK_STMT
+%token <treeLoc>		TOK_LOC
+%token <treeBool>		TOK_BOOL
+%token <treeJoin>		TOK_JOIN
+%token <treeEquality>	TOK_EQUALITY
+%token <treeRel>		TOK_REL
+%token <treeExpr>		TOK_EXPR
+%token <treeTerm>		TOK_TERM
+%token <treeUnary>		TOK_UNARY
+%token <treeFactor>		TOK_FACTOR
+%token <treeInt>		TOK_INT
+%token <treeFloat>		TOK_FLOAT
+
+%%
+
+program		: 	block
+        		{ tree=t_prog($1); }
+    		;
+
+block 		:	'{' decls stmts '}' { printf("\n"); }
+			;
+
+decls		:	 decls decls
+			|				 
+			;
+
+decl		: 	type id ';'
+			;
+
+type		:	type '[' num ']'
+			|	basic
+			;
+
+basic		:	int
+			|	float
+			;
+
+stmts		:	stmt stmts
+			|
+			;
+
+stmt		:	loc '=' bool ';'					{ $1 = $3; }
+			|	'if' '(' bool ')' stmt				
+			| 	'if' '(' bool ')' stmt else stmt
+			|	'while' '(' bool ')' stmt
+			|	'do'stmt 'while''(' bool ')'
+			|	'break' ';'
+			|	block
+			|	'read' loc ';'
+			|	'write' bool ';'
+			;
+		
+loc			:	loc '[' bool ']'	{ $$ = $1'['$3']'; }
+			|	id
+			;
+
+bool		:	bool '||' join	{$$ = $1 || $3; }
+			|	join
+			;
+
+equality	:	equality '==' rel	{ $$ = $1 == $3; }
+			|	equality '!=' rel	{ $$ = $1 != $3; }
+			|	rel
+			;
+
+rel			:	expr '<' expr	{ $$ = $1 < $3; }
+			|	expr '<=' expr	{ $$ = $1 <= $3; }
+			|	expr '>=' expr	{ $$ = $1 >= $3; }
+			|	expr '>' expr	{ $$ = $1 > $3; }
+			|	expr
+			;
+
+expr		:	expr '+' term	{ $$ = $1 + $3; }
+			|	expr '-' term	{ $$ = $1 - $3; }
+			|	term
+			;
+
+term		:	term '*' unary	{ $$ = $1 * $3; }
+			|	term '/' unary	{ $$ = $1 / $3; }
+			|	unary
+			;
+
+unary		:	'!' unary		{ $$ = !$2; }
+			|	'-' unary		{ $$ = -$2; }
+			|	factor
+			;
+
+factor		:	'(' bool ')'	{ $$ = $2; }
+			|	loc
+			|	num
+			|	real
+			|	'true'			{ $$ = $1; }
+			|	'false'			{ $$ = $1; }
+			;

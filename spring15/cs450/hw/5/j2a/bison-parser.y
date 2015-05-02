@@ -11,20 +11,24 @@ extern void yyerror(char *s);
 
 %}
 
-%expect 1
+%expect 0
 
 %union {
-  TreeProgram  treeProgram;
-  TreeBlock    treeBlock;
-  TreeId       treeId;
-  TreeNum      treeNum;
-  TreeReal     treeReal;
+  TreeProg  	treeProg;
+  TreeBlock    	treeBlock;
+  TreeDecls		treeDecls;
+  TreeStmts		treeStmts;
+  TreeId       	treeId;
+  TreeNum      	treeNum;
+  TreeReal     	treeReal;
 }
 
-%type <treeProgram>  program
-%type <treeBlock>    block
+%type <treeProgram>  	prog
+%type <treeBlock>    	block
+%type <treeDecls>		decls
+%type <treeStmts>		stmts
 
-%token TOK_break "break"
+%token TOK_BREAK "break"
 %token TOK_NE  "!="
 
 %token <treeId>	  TOK_ID
@@ -33,7 +37,10 @@ extern void yyerror(char *s);
 
 %%
 
-program
-    : block
-        { tree=t_program($1); }
-    ;
+prog: block { tree=t_prog($1); };
+
+block: '{' decls stmts '}' { treeBlock = t_block($2, $3); };
+
+decls:	{return 0;};
+
+stmts:	{return 0;};

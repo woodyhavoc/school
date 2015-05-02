@@ -18,7 +18,8 @@ num		{digit}+
 <COMMENT>\n
 "//".*\n
 
-"break" return TOK_break;
+"break" return TOK_BREAK;
+"while" return TOK_WHILE;
 
 {num} {
   yylval.treeNum=t_num(strtabget(yytext,yyleng));
