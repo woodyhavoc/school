@@ -5,6 +5,7 @@
 #ifndef GENERATOR_H
 #define GENERATOR_H
 
+#include "bison-parser.h"
 /**
  * This function is used to begin asm code
  * generation after the parser has completed

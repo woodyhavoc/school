@@ -2,9 +2,10 @@
 #define TREE_H
 
 #include "symtaben.h"
-#include "token.h"
+//#include "token.h"
 
 // Struct definitions
+typedef struct TreeProg		*Tree;
 typedef struct TreeProg *TreeProg;
 typedef struct TreeBlock *TreeBlock;
 typedef struct TreeDecls *TreeDecls;
@@ -29,6 +30,8 @@ typedef struct TreeTerm *TreeTerm;
 typedef struct TreeTerm1 *TreeTerm1;
 typedef struct TreeUnary *TreeUnary;
 typedef struct TreeFactor *TreeFactor;
+
+Tree tree;
 
 // Functions for creating all the tree structures
 extern TreeProg t_prog(TreeBlock block);
@@ -81,7 +84,7 @@ extern TreeFactor t_factor_false();
 
 struct TreeProg
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -95,7 +98,7 @@ struct TreeProg
 
 struct TreeBlock
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	int depth;
@@ -111,7 +114,7 @@ struct TreeBlock
 
 struct TreeDecls
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -126,7 +129,7 @@ struct TreeDecls
 
 struct TreeDecl
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -141,7 +144,7 @@ struct TreeDecl
 
 struct TreeType
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -156,7 +159,7 @@ struct TreeType
 
 struct TreeType1
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -172,14 +175,14 @@ struct TreeType1
 
 struct TreeBasic
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 };
 
 struct TreeStmts
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -194,7 +197,7 @@ struct TreeStmts
 
 struct TreeStmt
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
   	union
@@ -249,7 +252,7 @@ struct TreeStmt
 
 struct TreeLoc
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -264,7 +267,7 @@ struct TreeLoc
 
 struct TreeLoc1
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -279,7 +282,7 @@ struct TreeLoc1
 
 struct TreeBool
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -294,7 +297,7 @@ struct TreeBool
 
 struct TreeBool1
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -309,7 +312,7 @@ struct TreeBool1
 
 struct TreeJoin
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -324,7 +327,7 @@ struct TreeJoin
 
 struct TreeJoin1
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -339,7 +342,7 @@ struct TreeJoin1
 
 struct TreeEquality
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -354,7 +357,7 @@ struct TreeEquality
 
 struct TreeEquality1
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -375,7 +378,7 @@ struct TreeEquality1
 
 struct TreeRel
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -417,7 +420,7 @@ struct TreeRel
 
 struct TreeExpr
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -432,7 +435,7 @@ struct TreeExpr
 
 struct TreeExpr1
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -453,7 +456,7 @@ struct TreeExpr1
 
 struct TreeTerm
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -468,7 +471,7 @@ struct TreeTerm
 
 struct TreeTerm1
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -489,7 +492,7 @@ struct TreeTerm1
 
 struct TreeUnary
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union
@@ -513,7 +516,7 @@ struct TreeUnary
 
 struct TreeFactor
 {
-	TokenCode code;
+	int code;
 	int line;
 	int col;
 	union

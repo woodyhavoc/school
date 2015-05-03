@@ -4,10 +4,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "parser.h"
+//#include "parser.h"
+#include "tree.h"
+#include "bison-parser.h"
+#include "yyinput.h"
 #include "generator.h"
+
+extern Tree tree;
 
 int main(int argc, char** argv)
 {
-	return generate(parse());
+	yyparse();
+	return generate(tree);
 }

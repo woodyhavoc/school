@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include "symtab.h"
 #include "tree.h"
+#include "yyinput.h"
+#include "bison-parser.h"
 #include "type.h"
 #include "error.h"
 #include "generator.h"
@@ -13,10 +15,6 @@
 
 #define DEBUG 1
 //#define DEBUG 0
-
-#warning need to check types
-
-#warning write the documentation for the generator functions
 
 /**
  * Generates the beginning part of the asm code
@@ -478,7 +476,7 @@ static void g_decls(TreeDecls decls)
 	}
 }
 
-#warning complete implementation of g_decl
+//#warning complete implementation of g_decl
 static void g_decl(TreeDecl decl)
 {
 	if(!decl)
@@ -507,7 +505,7 @@ static void g_decl(TreeDecl decl)
 	}
 }
 
-#warning complete implementation of g_type
+//#warning complete implementation of g_type
 static void g_type(TreeType type)
 {
 	if(!type)
@@ -537,7 +535,7 @@ static void g_type(TreeType type)
 	}
 }
 
-#warning complete implementation of g_type1
+//#warning complete implementation of g_type1
 static void g_type1(TreeType1 type1)
 {
 	if(!type1)
@@ -565,7 +563,7 @@ static void g_type1(TreeType1 type1)
 	}
 }
 
-#warning complete implemenation of g_basic
+//#warning complete implemenation of g_basic
 static void g_basic(TreeBasic basic)
 {
 	if(!basic)
@@ -704,7 +702,7 @@ static void g_stmt(TreeStmt stmt)
   	}
 }
 
-#warning complete implementation of g_stmt_assign
+//#warning complete implementation of g_stmt_assign
 static void g_stmt_assign(TreeStmt stmt)
 {
 	if(!stmt)
@@ -1013,7 +1011,7 @@ static void g_stmt_write(TreeStmt stmt)
  * to be implemented
  * 
  */
-#warning complete implementation of g_loc
+//#warning complete implementation of g_loc
 static void g_loc(TreeLoc loc)
 {
 	// TODO Verify this shit
@@ -1045,7 +1043,7 @@ static void g_loc(TreeLoc loc)
 
 }
 
-#warning complete implementation of g_loc1
+//#warning complete implementation of g_loc1
 static void g_loc1(TreeLoc1 loc1)
 {
 	if(!loc1)
@@ -1074,7 +1072,7 @@ static void g_loc1(TreeLoc1 loc1)
 	
 }
 
-#warning complete implementation of g_bool
+//#warning complete implementation of g_bool
 static void g_bool(TreeBool bool)
 {
 	if(!bool)
@@ -1154,7 +1152,7 @@ static void g_bool1(TreeBool1 bool1)
 	}
 }
 
-#warning complete implementation of g_join
+//#warning complete implementation of g_join
 static void g_join(TreeJoin join)
 {
 	if(!join)
@@ -1184,7 +1182,7 @@ static void g_join(TreeJoin join)
 	}
 }
 
-#warning complete implementation of g_join1
+//#warning complete implementation of g_join1
 static void g_join1(TreeJoin1 join1)
 {
 	if(!join1)
@@ -1234,7 +1232,7 @@ static void g_join1(TreeJoin1 join1)
 	}
 }
 
-#warning complete implementation of g_equality
+//#warning complete implementation of g_equality
 static void g_equality(TreeEquality equality)
 {
 	if(!equality)
@@ -1263,7 +1261,7 @@ static void g_equality(TreeEquality equality)
 	}
 }
 
-#warning complete implementation of g_equality1
+//#warning complete implementation of g_equality1
 static void g_equality1(TreeEquality1 equality1)
 {
 	if(!equality1)
@@ -1437,7 +1435,7 @@ static void g_rel(TreeRel rel)
 	}
 }
 
-#warning complete implementation of g_expr
+//#warning complete implementation of g_expr
 static void g_expr(TreeExpr expr)
 {
 	if(!expr)
@@ -1467,7 +1465,7 @@ static void g_expr(TreeExpr expr)
 	}
 }
 
-#warning complete implemenation of g_expr
+//#warning complete implemenation of g_expr
 static void g_expr1(TreeExpr1 expr1)
 {	
 	if(!expr1)
@@ -1503,7 +1501,7 @@ static void g_expr1(TreeExpr1 expr1)
 	}
 }
 
-#warning complete implemenation of g_term
+//#warning complete implemenation of g_term
 static void g_term(TreeTerm term)
 {
 	if(!term)
@@ -1533,7 +1531,7 @@ static void g_term(TreeTerm term)
 	}
 }
 
-#warning complete implementation of g_term1
+//#warning complete implementation of g_term1
 static void g_term1(TreeTerm1 term1)
 {
 	if(!term1)
@@ -1569,7 +1567,7 @@ static void g_term1(TreeTerm1 term1)
 	}
 }
 
-#warning complete implementation of g_unary
+//#warning complete implementation of g_unary
 static void g_unary(TreeUnary unary)
 {
 	if(!unary)
@@ -1609,7 +1607,7 @@ static void g_unary(TreeUnary unary)
 	}
 }
 
-#warning complete implementation of g_factor
+//#warning complete implementation of g_factor
 static void g_factor(TreeFactor factor)
 {
 	if(!factor)

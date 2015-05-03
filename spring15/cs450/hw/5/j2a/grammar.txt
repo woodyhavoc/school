@@ -3,63 +3,78 @@ program  : block
 block    : '{' decls stmts '}'
 
 decls    : decl decls
-         |
+		 |
 
 decl     : type id ';'
 
-type     : type '[' num ']'
-         | basic
+type     : basic type1
+       
+type1	 : '[' num ']' type1
+		 |
 
-basic    : 'int'
-         | 'float'
+basic    : 'int'         
+		 | 'float'
 
 stmts    : stmt stmts
-         |
+		 |
 
 stmt     : loc '=' bool ';'
-         | 'if' '(' bool ')' stmt
-         | 'if' '(' bool ')' stmt 'else' stmt
-         | 'while' '(' bool ')' stmt
-         | 'do' stmt 'while' '(' bool ')' ';'
-         | 'break' ';'
-         | block
-         | 'read' loc ';'
-         | 'write' bool ';'
+		 | 'if' '(' bool ')' stmt
+		 | 'if' '(' bool ')' stmt 'else' stmt
+		 | 'while' '(' bool ')' stmt
+		 | 'do' stmt 'while' '(' bool ')' ';'
+		 | 'break' ';'
+		 | block
+		 | 'read' loc ';'
+		 | 'write' bool ';'
 
-loc      : loc '[' bool ']'
-         | id
+loc      : id loc1
 
-bool     : bool '||' join
-         | join
+loc1	 : '[' bool ']' loc1
+		 |
 
-join     : join '&&' equality
-         | equality
+bool     : join bool1  
+      
+bool1	 : '||' join bool1
+		 |
 
-equality : equality '==' rel
-         | equality '!=' rel
-         | rel
+join     : equality join1
 
-rel      : expr '<' expr
-         | expr '<=' expr
-         | expr '>=' expr
-         | expr '>' expr
-         | expr
+join1	 : '&&' equality join1
+		 |
 
-expr     : expr '+' term
-         | expr '-' term
-         | term
+equality : rel equality1
 
-term     : term '*' unary
-         | term '/' unary
-         | unary
+equality1: '==' rel equality1
+		 | '!=' rel equality1
+		 |
+	 
+rel      : expr '<' expr         
+		 | expr '<=' expr         
+		 | expr '>=' expr         
+		 | expr '>' expr         
+		 | expr
 
-unary    : '!' unary
-         | '-' unary
-         | factor
+expr     : term expr1 
+        
+expr1	 : '+' term expr1
+		 | '-' term expr1
+		 |
 
-factor   : '(' bool ')'
-         | loc
-         | num
-         | real
-         | 'true'
-         | 'false'
+term     : unary term1
+
+term1	 : '*' unary term1
+		 | '/' unary term1
+		 |
+
+unary    : '!' unary         
+		 | '-' unary         
+		 | factor
+	 
+factor   : '(' bool ')'         
+		 | loc         
+		 | num         
+		 | real         
+		 | 'true'         
+		 | 'false'
+	 

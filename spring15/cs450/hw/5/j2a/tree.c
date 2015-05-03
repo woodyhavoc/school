@@ -6,7 +6,9 @@
 #include <stdlib.h>
 #include "tree.h"
 #include "error.h"
-#include "scanner.h"
+//#include "scanner.h"
+#include "bison-parser.h"
+#include "yyinput.h"
 #include "type.h"
 
 #define ALLOC(t) \
